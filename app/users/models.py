@@ -9,6 +9,7 @@ class User(db.Model, CRUDMixin):
     zip_code = db.Column(db.Numeric(8, 0))
     town = db.Column(db.String(20))
     country = db.Column(db.String(20))
+    companies = db.relationship('Company', backref='user', lazy=True)
 
 class Company(db.Model, CRUDMixin):
     id = db.Column(db.Integer, primary_key=True)
