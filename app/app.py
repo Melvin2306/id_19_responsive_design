@@ -1,5 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, send_file
 from app.extensions.database import db, migrate
+from . import simple_pages
 
 def create_app():
     app = Flask(__name__)
@@ -10,7 +11,6 @@ def create_app():
 
 # Blueprints
 def register_blueprints(app: Flask):
-    app.register_blueprint(jobs.routes.blueprint)
     app.register_blueprint(simple_pages.routes.blueprint)
 # Extensions
 def register_extensions(app: Flask):
