@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html>
-    
-<head>
-    <meta charset="UTF-8">
-    <meta lang="EN">
-    <meta name=“viewport” content=“width=device-width,initial-scale=1">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="index.css" type="text/css">
-</head>
-
-<body>
-
-    <h1>
-
-
-
-
-</body>
-
+    <head>
+        {% block head %}
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="UTF-8">
+            <title>{% block title %}{% endblock %}</title>
+            <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.ico') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+            {% block csslink %}{% endblock %}
+            <link rel="preconnect" href="https://fonts.googleapis.com"> 
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+            <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                <nav class="navbar">
+                    <a href="/">
+                        <img src="{{ url_for('static', filename='images/cashflow-logo.png') }}" alt="CashFlow Logo" id="logo">
+                    </a>
+                    <button id="buygame">
+                        <a href="https://www.amazon.de/-/en/CASHFLOW-Investing-Kiyosaki-Updated-Version/dp/B0141IEJLW">
+                            Buy the game
+                        </a>
+                    </button>
+                    <button id="faq">
+                        <a href="/faq">
+                            F.A.Q.
+                        </a>
+                    </button>
+                    <div id="placeholder"></div>                   
+                    <button id="login">
+                        <a href="/login">
+                            Log In
+                        </a>
+                    </button>
+                    <button id="signup">
+                        <a href="/signup">
+                            Sign Up
+                        </a>
+                    </button>
+                    <img src="{{ url_for('static', filename='images/user.png') }}" alt="Profile Picture" id="profile">
+                </nav>
+            </header>
+            <main>
+                {% block main %}
+                {% endblock %}
+            </main>
+        {% endblock %}
+    </body>
 </html>
