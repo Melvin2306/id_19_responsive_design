@@ -1,4 +1,5 @@
 from flask import Blueprint, redirect, render_template, url_for, request, current_app
+from .models import User, Company
 
 blueprint = Blueprint('simple_pages', __name__)
 
@@ -6,4 +7,4 @@ blueprint = Blueprint('simple_pages', __name__)
 @blueprint.route('/<user_id>')
 def user(user_id):
     return render_template('/users/user.html', user_id=user_id)
-
+    
