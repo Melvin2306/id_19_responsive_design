@@ -1,0 +1,105 @@
+:root {
+    --clr-primary: rgb(240, 206, 37);
+    --clr-secondary: rgb(100, 30, 130);
+}
+
+html {
+    font-family: 'PT-Serif', sans-serif;
+    font-size: 16px;
+    color: var(--clr-secondary);
+
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+}
+
+button > [href] {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    max-height: 40px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--clr-secondary);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover {
+    background: rgb(156, 58, 165);
+}
+
+img {
+    display: block; /* to remove the 4px below the img */
+}
+
+
+/* Header and everything inside: */
+
+header {
+    /* min-height: 100px; */
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: var(--clr-primary);
+}
+
+nav {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content:flex-start;
+    height: inherit;
+    padding: 15px 15px;
+}
+
+nav > * {
+    margin: 0 10px;
+}
+
+img#logo {
+    max-height: 70px;
+}
+
+#placeholder {
+    margin: 0;
+    flex: 1 1 0px;
+}
+
+img#profile {
+    max-height: 42px;
+}
+
+@media (max-width:700px) {
+    img#logo {
+        max-height: 50px;
+    }
+
+    button#faq {
+        display: none;
+    }
+}
+
+@media (max-width:560px) {
+    button#signup {
+        display: none;
+    }
+}
+
+@media (max-width: 470px) {
+    button#login {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    button#buygame {
+        display: none;
+    }
+}
