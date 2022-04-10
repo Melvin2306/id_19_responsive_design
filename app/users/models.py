@@ -2,7 +2,7 @@ from app.extensions.database import db, CRUDMixin
 
 class User(db.Model, CRUDMixin):
     id = db.Column(db.Integer, primary_key=True)
-    email_address = db.Column(db.String(30))
+    email_address = db.Column(db.String(40))
     first_name = db.Column(db.String(30))
     last_name = db.Column(db.String(30))
     street_name = db.Column(db.String(40))
