@@ -4,8 +4,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def create_user(form_data):
     # Create new User 
     new_user = User(
-        email_address=form_data.get('email'),
-        #password=generate_password_hash(form_data.get('password'))
+        user_email=form_data.get('email'),
+        password=generate_password_hash(form_data.get('password'))
     )
     new_user.save()
     

@@ -1,8 +1,8 @@
 """create user and company model
 
-Revision ID: d6ba4add313e
+Revision ID: f4d5a83f9876
 Revises: 
-Create Date: 2022-04-15 12:48:23.053241
+Create Date: 2022-04-15 14:53:05.381339
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'd6ba4add313e'
+revision = 'f4d5a83f9876'
 down_revision = None
 branch_labels = None
 depends_on = None

@@ -38,16 +38,6 @@ def imprint():
 def redirect_imprint():
     return redirect(url_for(imprint))
 
-#signup
-@blueprint.route('/signup')
-def signup():
-    return render_template('simple_pages/signup.html')
-
-@blueprint.route('/sign-up')
-@blueprint.route('/anmeldung')
-@blueprint.route('/registration')
-def redirect_signup():
-    return redirect(url_for(signup))
 
 #FAQ
 @blueprint.route('/faq')
