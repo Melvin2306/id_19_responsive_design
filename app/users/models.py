@@ -2,7 +2,7 @@ from app.extensions.database import db, CRUDMixin
 
 class User(db.Model, CRUDMixin):
     id = db.Column(db.Integer, primary_key=True)
-    email_address = db.Column(db.String(40))
+    user_email = db.Column(db.String(40), index = True, unique = True)
     password = db.Column(db.String(150))
     first_name = db.Column(db.String(30))
     last_name = db.Column(db.String(30))
@@ -17,6 +17,6 @@ class Company(db.Model, CRUDMixin):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     name = db.Column(db.String(30))
     category = db.Column(db.String(20))
-    email_address = db.Column(db.String(40))
+    company_email = db.Column(db.String(40))
     phone_number = db.Column(db.Numeric(15, 0))
     description = db.Column(db.String(100))
