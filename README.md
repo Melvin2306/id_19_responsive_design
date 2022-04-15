@@ -1,4 +1,4 @@
-# Cashflow Board Game - Companion App
+# Address Changer - CODE Software Engeneering Foundations Web Application
 ---
 ## Table of contents
 * [General info](#general-info)
