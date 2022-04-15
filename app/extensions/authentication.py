@@ -8,7 +8,7 @@ login_manager = LoginManager()
 def load_user(user_id):
     return User.query.get(user_id)
 
-@login_manager.unauthorized_handler
-def unauthorized():
+# @login_manager.unauthorized_handler
+# def unauthorized():
     
-    return redirect(url_for('users.get_login'))
+#     return redirect(url_for('users.get_login'))

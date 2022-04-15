@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block csslink %}<link href="{{ url_for('static', filename='css/users/signup.css') }}" rel="stylesheet">{% endblock %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block main %}
+
+<form id="loginForm" class="container" method="POST">
+    <h1>
+        Sign Up
+    </h1>
+    <p>
+        You can sign up to save and look up your accounts.
+    </p>
+    <ul>
+        <li>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+        </li>
+        <li>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </li>
+        <li>
+            <input type="password" name="password_confirmation" id="pw_confirm" placeholder="Confirm Password" required>
+        </li>
+    </ul>
+    <input type="submit" value="Sign Up" class="submit">
+    {% if error %}
+        <p class="generatedErrors">{{ error }}</p>
+    {% endif %}
+</form>
+
+{% endblock %}

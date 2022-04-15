@@ -11,6 +11,31 @@ blueprint = Blueprint('users', __name__)
 def user(user_id):
     return render_template('/users/user.html', user_id=user_id)
 
+
+### signup ###
+@blueprint.get('/signup')
+def get_signup():
+    return render_template("users/signup.html")
+
+@blueprint.post('/signup')
+def post_signup():
+    try:
+        if User.query.filter_by(email=request.form.get('email')).first():
+            raise Exception ('Email already taken.')
+        elif request.form.get('password') != request.form.get('password_confirmation'):
+            raise Exception('Passwords do not match.')
+        
+        user = create_user(request.form)
+        login_user(user)
+        return redirect(url_for('simple_pages.about'))
+    
+    except Exception as error_message:
+        error = error_message or 'An error occurred while creating a user. Please make sure to enter valid data.'
+        return render_template('users/signup.html', error=error)
+
+
+
+### login ###
 @blueprint.get('/login')
 def get_login():
     return render_template("users/login.html")
@@ -30,7 +55,3 @@ def post_login():
     except Exception as error_message:
         error = error_message or 'An error occurred while logging in. Please verify your email and password.'
         return render_template('users/login.html', error=error)
-
-@blueprint.route('/signup')
-def get_signup():
-    return render_template('/users/signup.html')
