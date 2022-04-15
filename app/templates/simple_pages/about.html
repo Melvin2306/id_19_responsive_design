@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
+{% block title %}about{% endblock %}
+<link rel="stylesheet" href="about.css" type="text/css">
 
-{% block csslink %}<link href="{{ url_for('static', filename='css/simple_pages/about.css') }}" rel="stylesheet">{% endblock %}
+<body>
+    <h1>
+        About this Project
+    </h1>
 
-{% block title %}Sign Up{% endblock %}
+    <div>
+        This project is my assesment for the study program "Software Engeneering Foundations" at
+        <a href="code.berlin">
+        CODE University
+        </a>.
+    </div>
+    <div>
+        My motivation for this address changer application came from the struggle you face when you're moving to a new location and you need to change your address for all your accounts (e.g. bank accounts, insurance accounts etc. )
+    </div>
 
-{% block main %}
+</body>
 
-<h1>
-    About
-</h1>
-
-{% endblock %}
+</html>

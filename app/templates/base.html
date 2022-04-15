@@ -23,9 +23,9 @@
                     <a href="/">
                         <img src="{{ url_for('static', filename='images/icon.png') }}" alt="adress-changer logo" id="logo">
                     </a>
-                    <button id="buygame">
-                        <a href="https://www.amazon.de/-/en/CASHFLOW-Investing-Kiyosaki-Updated-Version/dp/B0141IEJLW">
-                            Buy the game
+                    <button id="how_it_works">
+                        <a href="/how_it_works">
+                            How it works
                         </a>
                     </button>
                     <button id="faq">
@@ -61,6 +61,17 @@
                 {% block main %}
                 {% endblock %}
             </main>
+            <footer>
+                <button id="imprint">
+                    <a href="/imprint">
+                        Imprint
+                    </a>
+                <button id="about">
+                    <a href="/about">
+                        About
+                    </a>
+                
+            </footer>
         {% endblock %}
     </body>
 </html>
