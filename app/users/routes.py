@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect, render_template, url_for, request, current_app
 from .models import User, Company
 
-blueprint = Blueprint('simple_pages', __name__)
+blueprint = Blueprint('users', __name__)
 
 ### root ### 
 @blueprint.route('/<user_id>')
