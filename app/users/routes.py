@@ -12,6 +12,7 @@ blueprint = Blueprint('users', __name__)
 
 ### root ### 
 @blueprint.route('/<user_id>')
+@login_required
 def user(user_id):
     return render_template('/users/user.html', user_id=user_id)
 
@@ -72,8 +73,3 @@ def post_login():
 def get_logout():
     logout_user()
     return redirect(url_for('users.get_login'))
-
-### user settings ### 
-@blueprint.route('/<user_id>/settings')
-def user_settings(user_id):
-    return render_template('/users/settings.html', user_id=user_id)

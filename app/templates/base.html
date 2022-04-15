@@ -55,13 +55,6 @@
                             </a>
                         </button>
                     {% endif %}
-                    {% if current_user.is_authenticated %}
-                        <button id="settings">
-                            <a href="{{ url_for('users.user_settings') }}">
-                                Settings
-                            </a>
-                        </button>
-                    {% endif %}
                 </nav>
             </header>
             <main>
