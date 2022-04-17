@@ -62,6 +62,8 @@
                 {% endblock %}
             </main>
             <footer>
+                Address Changer
+                <script>document.write( new Date().getFullYear() );</script>
                 <button id="imprint">
                     <a href="/imprint">
                         Imprint
@@ -70,7 +72,12 @@
                     <a href="/about">
                         About
                     </a>
-                
+                <form>
+                    <select name=”language”>
+                        <option value=”english”>English</option>
+                        <option value=”german” disabled selected >German</option>
+                        </select>
+                </form>
             </footer>
         {% endblock %}
     </body>

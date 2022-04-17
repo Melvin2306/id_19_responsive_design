@@ -1,6 +1,6 @@
 :root {
-    --clr-primary: rgb(240, 206, 37);
-    --clr-secondary: rgb(100, 30, 130);
+    --clr-primary: rgb(140, 46, 26);
+    --clr-secondary: rgb(253, 205, 0);
 }
 
 html {
@@ -46,6 +46,14 @@ header {
     /* min-height: 100px; */
     width: 100vw;
     box-sizing: border-box;
+    background-color: var(--clr-primary);
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    box-sizing:  border-box;
     background-color: var(--clr-primary);
 }
 
