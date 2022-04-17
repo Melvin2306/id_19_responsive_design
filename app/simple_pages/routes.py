@@ -49,3 +49,8 @@ def faq():
 @blueprint.route('/frequently-asked-questions')
 def redirect_faq():
     return redirect(url_for(faq))
+
+@blueprint.route('/how_it_works')
+def how_it_works():
+    return render_template('simple_pages/how_it_works.html')
+
