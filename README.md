@@ -76,6 +76,6 @@ Project is created with:
 * zipp: 3.8.0
 
 All programs can easily be installed with the requirements.txt file. Just type
-'''
+```
 pip install -r requirements.txt
-'''
+```
