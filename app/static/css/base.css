@@ -105,9 +105,3 @@ img#profile {
         display: none;
     }
 }
-
-@media (max-width: 400px) {
-    button#buygame {
-        display: none;
-    }
-}
