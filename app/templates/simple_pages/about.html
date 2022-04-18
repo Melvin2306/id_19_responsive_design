@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
+
 {% block title %}about{% endblock %}
+
+{% block csslink %}
 <link rel="stylesheet" href="about.css" type="text/css">
+{% endblock %}
 
-<body>
-    <h1>
-        About this Project
-    </h1>
+{% block main %}
+<h1>
+    About this Project
+</h1>
 
-    <div>
-        This project is my assesment for the study program "Software Engeneering Foundations" at
-        <a href="code.berlin">
-        CODE University
-        </a>.
-    </div>
-    <div>
-        My motivation for this address changer application came from the struggle you face when you're moving to a new location and you need to change your address for all your accounts (e.g. bank accounts, insurance accounts etc. )
-    </div>
-
-</body>
-
-</html>
+<div>
+    This project is my assesment for the study program "Software Engeneering Foundations" at
+    <a href="code.berlin">
+    CODE University</a>.
+</div>
+<div>
+    My motivation for this address changer application came from the struggle you face when you're moving to a new location and you need to change your address for all your accounts (e.g. bank accounts, insurance accounts etc. )
+</div>
+{% endblock %}

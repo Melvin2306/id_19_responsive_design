@@ -1,49 +1,52 @@
 {% extends 'base.html' %}
-{% block title %}index page address-changer application{% endblock %}
-<link rel="stylesheet" href="index.css" type="text/css">
 
-<body>
-    <h1>
-        The Address Changer
-    </h1>
-    <section class="main-text">
-        <p>
-            Are you annoyed by changing or even forgetting to change your address with all your accounts?
-        </p>
-        <p>
-            We got you!
-        </p>
-        <p>
-            The Address Changer - the best way to keep track of all your accounts and your easy way of changing your address for all your accounts with one click!
-        </p>
-    </section>
-    <div class="flex_item right">
-    <img src="{{ url_for('static', filename='images/letters.jpg') }}" alt="Photo of Letters" class="letters_photo">
-    </div>
-    <div class="columns">
-    <section class="column" id="column1">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
-    </section>
-    <section class="column" id="column2">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
-    </section>
-    <section class="column" id="column3">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
-    </section>
-    <section class="column" id="column4">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        </p>
-    </section>
-</body>
-</html>
+{% block title %}index page address-changer application{% endblock %}
+
+{% block csslink %}
+<link rel="stylesheet" href="index.css" type="text/css">
+{% endblock %}
+
+{% block main %}
+<h1>
+    The Address Changer
+</h1>
+<section class="main-text">
+    <p>
+        Are you annoyed by changing or even forgetting to change your address with all your accounts?
+    </p>
+    <p>
+        We got you!
+    </p>
+    <p>
+        The Address Changer - the best way to keep track of all your accounts and your easy way of changing your address for all your accounts with one click!
+    </p>
+</section>
+<div class="flex_item right">
+<img src="{{ url_for('static', filename='images/letters.jpg') }}" alt="Photo of Letters" class="letters_photo">
+</div>
+<div class="columns">
+<section class="column" id="column1">
+    <h3>Lorem ipsum</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    </p>
+</section>
+<section class="column" id="column2">
+    <h3>Lorem ipsum</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    </p>
+</section>
+<section class="column" id="column3">
+    <h3>Lorem ipsum</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    </p>
+</section>
+<section class="column" id="column4">
+    <h3>Lorem ipsum</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+    </p>
+</section>
+{% endblock %}

@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
-{% block csslink %}<link href="{{ url_for('static', filename='css/users/login.css') }}" rel="stylesheet">{% endblock %}
-
 {% block title %}Login{% endblock %}
 
-{% block main %}
+{% block csslink %}
+<link href="{{ url_for('static', filename='css/users/login.css') }}" rel="stylesheet">
+{% endblock %}
 
+{% block main %}
 <form id="loginForm" class="container" method="POST">
     <h1>
         Log In

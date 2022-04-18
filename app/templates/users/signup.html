@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
-{% block csslink %}<link href="{{ url_for('static', filename='css/users/signup.css') }}" rel="stylesheet">{% endblock %}
+{% block title %}sign up{% endblock %}
 
-{% block title %}Sign Up{% endblock %}
+{% block csslink %}
+<link href="{{ url_for('static', filename='css/users/signup.css') }}" rel="stylesheet">
+{% endblock %}
 
 {% block main %}
 
