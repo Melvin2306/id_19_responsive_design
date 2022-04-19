@@ -11,9 +11,7 @@
             <link rel="shortcut icon" href="{{ url_for('static', filename='/images/icon.png') }}">
             <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
             {% block csslink %}{% endblock %}
-            <link rel="preconnect" href="https://fonts.googleapis.com"> 
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-            <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+            {% block jslink %}{% endblock %}
         {% endblock %}
     </head>
     <body>
@@ -43,14 +41,14 @@
                     {% endif %}    
                     {% if not current_user.is_authenticated %}      
                         <button id="login">
-                            <a href="/login">
+                            <a href="{{ url_for('users.get_login') }}">
                                 Log In
                             </a>
                         </button>
                     {% endif %}
                     {% if not current_user.is_authenticated %}
                         <button id="signup">
-                            <a href="/signup">
+                            <a href="{{ url_for('users.get_signup') }}">
                                 Sign Up
                             </a>
                         </button>
@@ -62,20 +60,29 @@
                 {% endblock %}
             </main>
             <footer>
-                Address Changer
-                <script>document.write( new Date().getFullYear() );</script>
-                <button id="imprint">
-                    <a href="/imprint">
+                <div class="footerElement" id="info">
+                    Address Changer
+                    <script>
+                        document.write( new Date().getFullYear() );
+                    </script>
+                </div>
+                
+                <div class="footerElement" id="footerLinks">
+                    <a id="imprint" class="fLinkElement" href="{{ url_for('simple_pages.imprint') }}">
                         Imprint
                     </a>
-                <button id="about">
-                    <a href="/about">
+                    |
+                    <a id="about" class="fLinkElement" href="{{ url_for('simple_pages.about') }}">
                         About
                     </a>
-                <form>
+                </div>
+                
+
+
+                <form class="footerElement" id="langSelect">
                     <select name=”language”>
-                        <option value=”english” selected >English</option>
-                        <option value=”german” disabled >German</option>
+                        <option id="english" selected >English</option>
+                        <option id="german" disabled >German</option>
                         </select>
                 </form>
             </footer>

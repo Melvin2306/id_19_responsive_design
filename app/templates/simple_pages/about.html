@@ -3,7 +3,7 @@
 {% block title %}about{% endblock %}
 
 {% block csslink %}
-<link rel="stylesheet" href="about.css" type="text/css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/simple_pages/about.css')}}" type="text/css">
 {% endblock %}
 
 {% block main %}
@@ -11,12 +11,12 @@
     About this Project
 </h1>
 
-<div>
+<p>
     This project is my assesment for the study program "Software Engeneering Foundations" at
-    <a href="code.berlin">
+    <a href="https://code.berlin">
     CODE University</a>.
-</div>
-<div>
+</p>
+<p>
     My motivation for this address changer application came from the struggle you face when you're moving to a new location and you need to change your address for all your accounts (e.g. bank accounts, insurance accounts etc. )
-</div>
+</p>
 {% endblock %}

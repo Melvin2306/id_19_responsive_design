@@ -6,6 +6,10 @@
 <link href="{{ url_for('static', filename='css/users/signup.css') }}" rel="stylesheet">
 {% endblock %}
 
+{% block jslink %}
+<script defer src="{{ url_for('static', filename='js/users/signup.js')}}"></script>
+{% endblock %}
+
 {% block main %}
 
 <form id="loginForm" class="container" method="POST">
@@ -17,13 +21,23 @@
     </p>
     <ul>
         <li>
-            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input class= "signupform" type="email" name="email" id="email" placeholder="Email" required>
         </li>
         <li>
-            <input type="password" name="password" id="password" placeholder="Password" required>
+            <div class= "signupform" id="passwordInput">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <span id="showHide">SHOW</span>
+            </div>
+            <div id="passwordStrength">
+                <span id="poor"></span>
+                <span id="weak"></span>
+                <span id="strong"></span>
+            </div>
+            <div id="passwordInfo"></div>
+            <!-- <input type="password" name="password" id="password" placeholder="Password" required> -->
         </li>
         <li>
-            <input type="password" name="password_confirmation" id="pw_confirm" placeholder="Confirm Password" required>
+            <input class= "signupform" type="password" name="password_confirmation" id="pw_confirm" placeholder="Confirm Password" required>
         </li>
     </ul>
     <input type="submit" value="Sign Up" class="submit">
