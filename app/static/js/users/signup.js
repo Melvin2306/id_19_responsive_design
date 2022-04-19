@@ -1,4 +1,4 @@
-let passwordInput = document.querySelector('#passwordInput input[type="password"]');
+let passwordInput = document.querySelector('input[type="password"]');
 let passwordStrength= document.getElementById('passwordStrength');
 let poor = document.querySelector('#passwordStrength #poor');
 let weak = document.querySelector('#passwordStrength #weak');
@@ -69,7 +69,7 @@ function strongPasswordStrength(passwordLength, poorPassword, weakPassword, stro
     }
 }
 
-let showHide = document.querySelector('#passwordInput #showHide');
+let showHide = document.querySelector('#showHide');
 showHide.onclick = function(){showHidePassword()}
 function showHidePassword(){
     if(passwordInput.type == "password"){

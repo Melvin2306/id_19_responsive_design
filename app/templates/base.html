@@ -21,37 +21,27 @@
                     <a href="/">
                         <img src="{{ url_for('static', filename='images/icon.png') }}" alt="adress-changer logo" id="logo">
                     </a>
-                    <button id="how_it_works">
-                        <a href="/how_it_works">
-                            How it works
-                        </a>
-                    </button>
-                    <button id="faq">
-                        <a href="/faq">
-                            F.A.Q.
-                        </a>
-                    </button>
+                    <a class ="button" href="/how_it_works">
+                        How it works
+                    </a>
+                    <a class ="button" href="/faq">
+                        F.A.Q.
+                    </a>
                     <div id="placeholder"></div>
                     {% if current_user.is_authenticated %}
-                        <button id="logout">
-                            <a href="{{ url_for('users.get_logout') }}">
-                                Log Out
-                            </a>
-                        </button>
+                        <a class ="button" id="logout" href="{{ url_for('users.get_logout') }}">
+                            Log Out
+                        </a>
                     {% endif %}    
-                    {% if not current_user.is_authenticated %}      
-                        <button id="login">
-                            <a href="{{ url_for('users.get_login') }}">
-                                Log In
-                            </a>
-                        </button>
+                    {% if not current_user.is_authenticated %}
+                        <a class ="button" id="login" href="{{ url_for('users.get_login') }}">
+                            Log In
+                        </a>
                     {% endif %}
                     {% if not current_user.is_authenticated %}
-                        <button id="signup">
-                            <a href="{{ url_for('users.get_signup') }}">
-                                Sign Up
-                            </a>
-                        </button>
+                        <a class ="button" id="signup" href="{{ url_for('users.get_signup') }}">
+                            Sign Up
+                        </a>
                     {% endif %}
                 </nav>
             </header>
@@ -62,6 +52,7 @@
             <footer>
                 <div class="footerElement" id="info">
                     Address Changer
+                    ©
                     <script>
                         document.write( new Date().getFullYear() );
                     </script>
@@ -80,10 +71,15 @@
 
 
                 <form class="footerElement" id="langSelect">
-                    <select name=”language”>
+                    <select name=”language” id="langSelector">
+                        <option id="language_game_of_thornes" disabled >Dothraki</option>
+                        <option id="language_lord_of_the_rings" disabled >Elvish</option>
                         <option id="english" selected >English</option>
+                        <option id="french" disabled >French</option>
                         <option id="german" disabled >German</option>
-                        </select>
+                        <option id="language_star_wars" disabled >Huttese</option>
+                        <option id="spanish" disabled >Spanish</option>
+                    </select>
                 </form>
             </footer>
         {% endblock %}

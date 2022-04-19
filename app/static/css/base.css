@@ -123,6 +123,7 @@ footer {
 .fLinkElement {
     color: var(--clr-secondary);
     text-decoration: none;
+    margin: 0 10px;
 }
 
 .fLinkElement:hover {
@@ -133,12 +134,15 @@ footer {
     margin-right: auto;
 }
 
-/* #footerLinks {
-    margin: 0 auto;
-} */
+/* #footerLinks  */
 
 #langSelect {
+    width: 175px;
     margin-left: auto;
+}
+
+#langSelector {
+    float: right;
 }
 
 

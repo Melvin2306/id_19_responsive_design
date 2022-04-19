@@ -11,20 +11,29 @@
     margin-bottom: 5px;
 }
 
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+
+
 /* PASSWORD */
 
-#passwordInput{
+#input{
     width: 100%;
+    border: none;
+    padding: 0;
     display: flex;
     position: relative;
 }
-#passwordInput input[type="password"], #passwordInput input[type="text"]{
+#input input {
     width: 100%;
     padding: 10px;
     border: 1px solid lightgrey;
     font-size: 15px;
 }
-#passwordInput #showHide{
+#input #showHide{
     font-size: 12px;
     font-weight: 600;
     position: absolute;

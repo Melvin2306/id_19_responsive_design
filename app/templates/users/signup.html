@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}sign up{% endblock %}
+{% block title %}Sign Up{% endblock %}
 
 {% block csslink %}
 <link href="{{ url_for('static', filename='css/users/signup.css') }}" rel="stylesheet">
@@ -21,10 +21,12 @@
     </p>
     <ul>
         <li>
-            <input class= "signupform" type="email" name="email" id="email" placeholder="Email" required>
+            <div class= "signupform" id="input">
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
         </li>
         <li>
-            <div class= "signupform" id="passwordInput">
+            <div class= "signupform" id="input">
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <span id="showHide">SHOW</span>
             </div>
@@ -34,13 +36,14 @@
                 <span id="strong"></span>
             </div>
             <div id="passwordInfo"></div>
-            <!-- <input type="password" name="password" id="password" placeholder="Password" required> -->
         </li>
         <li>
-            <input class= "signupform" type="password" name="password_confirmation" id="pw_confirm" placeholder="Confirm Password" required>
+            <div class= "signupform" id="input">
+                <input type="password" name="password_confirmation" id="pw_confirm" placeholder="Confirm Password" required>
+            </div>
         </li>
     </ul>
-    <input type="submit" value="Sign Up" class="submit">
+    <input type="submit" value="Sign Up" class="submit button">
     {% if error %}
         <p class="generatedErrors">{{ error }}</p>
     {% endif %}
