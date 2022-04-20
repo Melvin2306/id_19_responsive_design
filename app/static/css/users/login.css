@@ -2,6 +2,17 @@
     margin: 0;
 }
 
+.loginform {
+    width: 30%;
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
 main {
     height: calc(100vh - 100px - 30px - 30px);
     padding: 30px 40px;
@@ -32,17 +43,6 @@ li {
     padding: 5px 0;
 }
 
-.submit {
-    max-height: 40px;
-    width: 192px;
-    border: none;
-    border-radius: 8px;
-    padding: 10px;
-    background: var(--clr-secondary);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-}
 
 .generatedErrors {
     color: tomato;

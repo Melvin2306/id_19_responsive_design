@@ -18,7 +18,7 @@
         {% block body %}
             <header>
                 <nav class="navbar">
-                    <a href="/">
+                    <a href="{{ url_for('simple_pages.root') }}">
                         <img src="{{ url_for('static', filename='images/icon.png') }}" alt="adress-changer logo" id="logo">
                     </a>
                     <a class ="button" href="/how_it_works">
@@ -51,19 +51,21 @@
             </main>
             <footer>
                 <div class="footerElement" id="info">
+                    <a class="link" href="{{ url_for('simple_pages.root') }}">
                     Address Changer
                     ©
                     <script>
                         document.write( new Date().getFullYear() );
                     </script>
+                    </a>
                 </div>
                 
                 <div class="footerElement" id="footerLinks">
-                    <a id="imprint" class="fLinkElement" href="{{ url_for('simple_pages.imprint') }}">
+                    <a id="imprint" class="link fLinkElement" href="{{ url_for('simple_pages.imprint') }}">
                         Imprint
                     </a>
                     |
-                    <a id="about" class="fLinkElement" href="{{ url_for('simple_pages.about') }}">
+                    <a id="about" class="link fLinkElement" href="{{ url_for('simple_pages.about') }}">
                         About
                     </a>
                 </div>

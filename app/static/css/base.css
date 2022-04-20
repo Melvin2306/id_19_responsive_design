@@ -1,27 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
+/* ROOT */
+
 :root {
     --clr-primary: rgb(140, 46, 26);
     --clr-secondary: rgb(253, 205, 0);
     --clr-background: rgb(255, 255, 255);
 }
 
+/* GENERAL */
+
 * {
     margin: 0;
 }
-
 
 html {
     font-family: 'PT Serif', serif;
     font-size: 16px;
     color: var(--clr-secondary);
-
 }
 
 body {
     margin: 0;
     width: 100vw;
 }
+
+/* BUTTONS */
 
 button > [href] {
     color: white;
@@ -43,15 +47,47 @@ button:hover {
     background: rgb(156, 58, 165);
 }
 
+.submit {
+    max-height: 40px;
+    width: 192px;
+    border: black;
+    border: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+    color: var(--clr-primary);
+    text-align: center;
+    text-decoration: none;
+}
+
+.submit:hover {
+    background: rgb(156, 58, 165)
+}
+
+/* IMAGE */
+
 img {
     display: block; /* to remove the 4px below the img */
 }
+
+/* PARAGRAPH */
 
 p {
     line-height: 1.5rem;
 }
 
+/* LINKS */
 
+.link {
+    color: var(--clr-secondary);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------- */
 
 /* HEADER */
 
@@ -89,14 +125,16 @@ img#profile {
     max-height: 42px;
 }
 
-/* MAIN */
+/* ----------------------------------------------- */
 
+/* MAIN */
 
 main {
     max-width: 600px;
     margin: 40px auto;
 }
 
+/* ----------------------------------------------- */
 
 /* FOOTER */
 
@@ -121,20 +159,12 @@ footer {
 }
 
 .fLinkElement {
-    color: var(--clr-secondary);
-    text-decoration: none;
     margin: 0 10px;
-}
-
-.fLinkElement:hover {
-    text-decoration: underline;
 }
 
 #info {
     margin-right: auto;
 }
-
-/* #footerLinks  */
 
 #langSelect {
     width: 175px;
@@ -147,7 +177,9 @@ footer {
 
 
 
+/* ----------------------------------------------- */
 
+/* BREAKPOINTS */
 
 @media (max-width:700px) {
     img#logo {
