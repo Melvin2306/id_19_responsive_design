@@ -72,6 +72,12 @@ def post_login():
         return render_template('users/login.html', error=error)
 
 
+### settings ###
+@blueprint.get('/settings')
+def get_settings():
+    return render_template("users/settings.html")
+
+
 ### logout ###
 @blueprint.get('/logout')
 def get_logout():
@@ -83,7 +89,6 @@ def get_logout():
 @blueprint.get('/<user_id>/deleteuser')
 def delete_user(user_id):
     current_user.delete()
-
     return redirect(url_for('users.get_login'))
 
 
