@@ -14,7 +14,11 @@ blueprint = Blueprint('users', __name__)
 @blueprint.route('/<user_id>')
 @login_required
 def user(user_id):
-    return render_template('/users/user.html', user_id=user_id)
+
+    user = User.query.filter_by(id=user_id).first()
+    companies = Company.query.filter_by(user_id=user_id)
+
+    return render_template('/users/user.html', user=user, companies=companies)
 
 
 ### signup ###
@@ -73,3 +77,21 @@ def post_login():
 def get_logout():
     logout_user()
     return redirect(url_for('users.get_login'))
+
+
+### delete user ###
+@blueprint.get('/<user_id>/deleteuser')
+def delete_user(user_id):
+    current_user.delete()
+
+    return redirect(url_for('users.get_login'))
+
+
+### delete company ### 
+@blueprint.get('/<company_id>/deletecompany')
+def delete_company(company_id):
+    company = Company.query.filter_by(id=company_id).first()
+    user_id = current_user.id
+    company.delete()
+
+    return redirect(url_for('users.user', user_id=user_id))
