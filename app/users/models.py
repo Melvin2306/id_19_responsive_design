@@ -19,5 +19,5 @@ class Company(db.Model, CRUDMixin):
     name = db.Column(db.String(30))
     category = db.Column(db.String(20))
     company_email = db.Column(db.String(40))
-    phone_number = db.Column(db.Numeric(15, 0))
+    phone_number = db.Column(db.String(20))
     description = db.Column(db.String(100))

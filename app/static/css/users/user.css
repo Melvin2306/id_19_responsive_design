@@ -5,16 +5,38 @@ main {
 
 .table { 
     display: table;
+    border: 1px solid var(--clr-secondary);
+    border-spacing: 1em;
     margin: 30px;
+    /*  */
+}
+
+.table_header {
+    display: table-header-group;
+    font-weight: bold;
+}
+
+.table_header_element {
+    display: table-cell;
+    padding: 10px;
+    text-align: justify;
+}
+
+.table_body {
+    display: table-row-group;
 }
 
 .row {
     display: table-row;
+    border-collapse:collapse;
     border: 1px solid black;
 }
 
 .entity {
     display: table-cell;
-    margin: 10px;
-    border-right: 1px solid black ;
+    margin-right: 100px;
+}
+
+.delete_company_button {
+    padding: 2px;
 }

@@ -9,26 +9,45 @@
 {% block main %}
 
 <div class="table">
-    {% for company in companies %}
-    <section class="row">
-        <span class="entity">
-            {{ company.name }}
-        </span>
-        <span class="entity">
-            {{ company.category }}
-        </span>
-        <span class="entity">
-            {{ company.company_email }}
-        </span>
-        <span class="entity">
-            {{ company.phone_number }}
-        </span>
-        <span class="entity">
-            {{ company.description }}
-        </span>
-        <a class="button" href="{{ url_for('users.delete_company', company_id=company.id) }}">Delete</a>
-    </section>
-    {% endfor %}
+    <div class="table_header">
+        <div class="table_header_element">
+            Account
+        </div>
+        <div class="table_header_element">
+            Category
+        </div>
+        <div class="table_header_element">
+            Email
+        </div>
+        <div class="table_header_element">
+            Phone
+        </div>
+        <div class="table_header_element">
+            Description
+        </div>
+    </div>
+    <div class="table_body">
+        {% for company in companies %}
+        <section class="row">
+            <span class="entity">
+                {{ company.name }}
+            </span>
+            <span class="entity">
+                {{ company.category }}
+            </span>
+            <span class="entity">
+                {{ company.company_email }}
+            </span>
+            <span class="entity">
+                {{ company.phone_number }}
+            </span>
+            <span class="entity">
+                {{ company.description }}
+            </span>
+            <a class="button delete_company_button" href="{{ url_for('users.delete_company', company_id=company.id) }}">Delete</a>
+        </section>
+        {% endfor %}
+    </div>
 </div>
 
 <a class="button account_btns" href="{{ url_for('users.delete_user', user_id=current_user.id) }}">Delete User</a>
