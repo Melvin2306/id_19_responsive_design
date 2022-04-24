@@ -8,7 +8,12 @@
             <meta name="author" content="Melvin Rinkleff">
             <meta name="viewport" content="width=device-width,initial-scale=1">
             <meta charset="UTF-8">
-            <link rel="shortcut icon" href="{{ url_for('static', filename='/images/icon.png') }}">
+            <style>
+                :root{
+                    --bg-url: {{url_for('static', filename='images/pic_melvin.jpg') }}
+                }
+            </style>
+            <link rel="shortcut icon" href="{{ ç }}">
             <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
             {% block csslink %}{% endblock %}
             {% block jslink %}{% endblock %}

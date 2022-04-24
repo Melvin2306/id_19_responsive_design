@@ -5,7 +5,7 @@
 #backgrounddiv {
     height: 500px;
     width: 800px;
-    background-image: url("{{ url_for('static', filename='/images/pic_melvin.jpg') }}");
+    background-image: url("var(--bg-url)");
 }
 
 #backgroundimg {
