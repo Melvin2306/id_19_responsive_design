@@ -24,7 +24,7 @@ all_accounts_dict = {
         "Category": "Banking", 
         "Contact Email": "info@sparkasse-hannover.de",
         "Contact Phone Number": "051130007070", 
-        "Description": "primary banking account", 
+        "Description": "Primary banking account", 
         },
     "N26 Bank": {
         "Account": "N26", 

@@ -49,7 +49,6 @@ def redirect_signup():
     return redirect(url_for('users.get_signup'))
 
 
-
 ### login ###
 @blueprint.get('/login')
 def get_login():
@@ -72,17 +71,23 @@ def post_login():
         return render_template('users/login.html', error=error)
 
 
-### settings ###
-@blueprint.get('/settings')
-def get_settings():
-    return render_template("users/settings.html")
-
-
 ### logout ###
 @blueprint.get('/logout')
 def get_logout():
     logout_user()
     return redirect(url_for('users.get_login'))
+
+
+# ### edit account ###
+# @blueprint.get('/<user_id>/<company_id>')
+# def edit_account(user_id):
+#     return redirect(url_for('users.user'))
+
+
+### settings ###
+@blueprint.get('/settings')
+def get_settings():
+    return render_template("users/settings.html")
 
 
 ### delete user ###

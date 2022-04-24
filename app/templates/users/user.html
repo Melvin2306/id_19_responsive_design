@@ -6,6 +6,10 @@
 <link href="{{ url_for('static', filename='css/users/user.css') }}" rel="stylesheet">
 {% endblock %}
 
+{% block jslink %}
+<script defer src="{{ url_for('static', filename='js/users/confirmation.js')}}"></script>
+{% endblock %}
+
 {% block main %}
 
 <div class="table">
@@ -44,13 +48,15 @@
             <span class="entity">
                 {{ company.description }}
             </span>
-            <a class="button delete_company_button" href="{{ url_for('users.delete_company', company_id=company.id) }}">Delete</a>
+
+            <a class="button company_button" id="delete_company" href="{{ url_for('users.delete_company', company_id=company.id) }}">Delete</a>
         </section>
         {% endfor %}
     </div>
 </div>
 
-<a class="button account_btns" href="{{ url_for('users.delete_user', user_id=current_user.id) }}">Delete User</a>
+<a class="button account_btns" id="delete_user" href="{{ url_for('users.delete_user', user_id=current_user.id) }}">Delete User</a>
+
 
 
 {% endblock %}

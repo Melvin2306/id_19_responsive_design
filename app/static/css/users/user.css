@@ -19,6 +19,7 @@ main {
 .table_header_element {
     display: table-cell;
     text-align: justify;
+    border-bottom: 1px solid var(--clr-secondary);
 }
 
 .table_body {
@@ -36,6 +37,6 @@ main {
     margin-right: 100px;
 }
 
-.delete_company_button {
+.company_button {
     padding: 2px;
 }
