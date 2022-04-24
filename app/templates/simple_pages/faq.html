@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}F.A.Q.{% endblock %}
+{% block title %}FAQs{% endblock %}
 
 {% block csslink %}
 <link rel="stylesheet" href="faq.css" type="text/css">
@@ -8,5 +8,111 @@
 
 {% block main %}
 
+<h1>
+    FAQs
+</h1>
+
+<h2>
+    General
+</h2>
+
+<h3>
+    What is the purpose of this app?
+</h3>
+
+<p>
+    With this app everyone can get an overview over their accounts and can change their address for these accounts easily without forgetting an account.
+</p>
+
+<h3>
+    Who created this app?
+</h3>
+
+<p>
+    This app was created by
+    <a class="link" href="https://www.linkedin.com/in/melvin-rinkleff/">
+        Melvin Rinkleff</a>
+    in order to pass the Learning Unit "Software Engeneering Foundations" at
+    <a class="link" href="https://code.berlin">
+        CODE University</a>
+    .
+    Learn more about this project at the
+    <a id="about" class="link" href="{{ url_for('simple_pages.about') }}">
+        About Page
+    </a>
+    .
+</p>
+
+<h2>
+    Account
+</h2>
+
+<h3>
+    How can I change my account details?
+</h3>
+
+<p>
+
+</p>
+
+<h3>
+    How can I change my current password?
+</h3>
+
+<p>
+
+</p>
+
+<h2>
+    App
+</h2>
+
+<h3>
+    How can I add a new account to my Address Changer account?
+</h3>
+
+<p>
+
+</p>
+
+<h3>
+    Which browsers support this app?
+</h3>
+
+<p>
+    In general the app was designed to work in every browser. If you identify any problems with the app in your browser, please contact
+    <a class="link" href="mailto:melvin.rinkleff@code.berlin">
+        melvin.rinkleff@code.berlin
+    </a>
+    .
+</p>
+
+<h2>
+    Privacy
+</h2>
+
+<h3>
+    Where is my data stored?
+</h3>
+
+<p>
+
+</p>
+
+<h3>
+    How is my data stored?
+</h3>
+
+<p>
+
+</p>
+
+<h3>
+    Where can I delete my account?
+</h3>
+
+<p>
+
+</p>
 
 {% endblock %}
