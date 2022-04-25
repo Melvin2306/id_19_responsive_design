@@ -1,6 +1,16 @@
 body {
     background-image: url("https://www.gibraltarmailboxes.com/wp-content/uploads/2017/06/Elite-Post-Mount-Mailbox.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+    /* background-size: auto; */
     background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+#background_image {
+    background-image: url("https://www.gibraltarmailboxes.com/wp-content/uploads/2017/06/Elite-Post-Mount-Mailbox.jpg");
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+#background_image:before {
+    opacity: 0.3;
 }

@@ -2,6 +2,14 @@
     align-content: center;
 }
 
+#background_image_imprint {
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+#background_image:before {
+    opacity: 0.3;
+}
+
 #backgrounddiv {
     height: 500px;
     width: 800px;

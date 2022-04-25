@@ -7,6 +7,37 @@
 {% endblock %}
 
 {% block main %}
+<h1>
+    How it works
+</h1>
+
+<p>
+    If you do not have an account yet,
+    <a class="link" href="{{ url_for('users.get_signup') }}">
+    sign up</a> for the Address Changer application. Otherwise
+    <a class="link" href="{{ url_for('users.get_login') }}">
+    log in</a>.
+</p>
+<p>
+    After signing up or logging in you will see your personal dashboard. Here you can add a new account by pressing the "Add Account" button, edit your current accounts by pressing the "Edit" button on the right side of the account or delete an account by pressing the "Delete" button on the right side of the account.<br>
+    Try adding your first account and try it out!
+</p>
+<p>
+    If you move to a new location, just add your new address in your "Account Settings" and press the "Send Emails" button in your dashboard. This application will automatically send an email to all your accounts email addresses telling your account provider that you changed your address. The email will look like this:<br><br>
+</p>
+<p id="email_p">
+    To whomever it may conern,<br><br>
+    please note that I moved to a new address and therefore want to change my registered address to the following:<br><br>
+    <div id="email">
+        First Name Last Name<br>
+        Additional Information<br>
+        Street Street Number<br>
+        Town Country<br><br>
+    </div>
+    if you have any questions, please contact me via email at your email address.<br><br>
+    Best regards,<br>
+    First Name Last Name
+</p>
 
 
 
