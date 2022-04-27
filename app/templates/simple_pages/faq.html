@@ -3,7 +3,11 @@
 {% block title %}FAQs{% endblock %}
 
 {% block csslink %}
-<link rel="stylesheet" href="faq.css" type="text/css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/simple_pages/faq.css')}}" type="text/css">
+{% endblock %}
+
+{% block jslink %}
+<script defer src="{{ url_for('static', filename='js/simple_pages/faq.js')}}"></script>
 {% endblock %}
 
 {% block main %}
@@ -16,19 +20,19 @@
     General
 </h2>
 
-<h3>
+<h3 class="faq-question">
     What is the purpose of this app?
 </h3>
 
-<p>
+<p class="faq-answer">
     With this app everyone can get an overview over their accounts and can change their address for these accounts easily without forgetting an account.
 </p>
 
-<h3>
+<h3 class="faq-question">
     Who created this app?
 </h3>
 
-<p>
+<p class="faq-answer">
     This app was created by
     <a class="link" href="https://www.linkedin.com/in/melvin-rinkleff/">
         Melvin Rinkleff</a>
@@ -47,19 +51,19 @@
     Account
 </h2>
 
-<h3>
+<h3 class="faq-question">
     How can I change my account details?
 </h3>
 
-<p>
+<p class="faq-answer">
     When you are logging in with your account, go to Account Settings. There you can change all your account details.
 </p>
 
-<h3>
+<h3 class="faq-question">
     How can I change my current password?
 </h3>
 
-<p>
+<p class="faq-answer">
     When you are logging in with your account, go to Account Settings. There you can change your password. Unfortunately there is no option to reset your password if you forgot it without being logged in yet. Please be aware of that!
 </p>
 
@@ -67,19 +71,19 @@
     App
 </h2>
 
-<h3>
+<h3 class="faq-question">
     How can I add a new account to my Address Changer account?
 </h3>
 
-<p>
+<p class="faq-answer">
     After logging in you will be redirected to your dashboard. Here you can add a new account with the button "Add Account", as well as deleting old accounts or editing your accounts.
 </p>
 
-<h3>
+<h3 class="faq-question">
     Which browsers support this app?
 </h3>
 
-<p>
+<p class="faq-answer">
     In general the app was designed to work in every browser. If you identify any problems with the app in your browser, please contact
     <a class="link" href="mailto:melvin.rinkleff@code.berlin">
         melvin.rinkleff@code.berlin
@@ -91,19 +95,19 @@
     Privacy
 </h2>
 
-<h3>
+<h3 class="faq-question">
     How and where is my data stored?
 </h3>
 
-<p>
+<p class="faq-answer">
     Your data is safely stored on a server in the EU.
 </p>
 
-<h3>
+<h3 class="faq-question">
     Where can I delete my account?
 </h3>
 
-<p>
+<p class="faq-answer">
     You can delete your account when you are logged in. Then go to "Account Settings" and on the bottom you will find "Delete my Address-Changer Account". Please be aware that deleting your account can not be undone.
 </p>
 

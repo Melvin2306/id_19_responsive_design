@@ -38,7 +38,6 @@ def imprint():
 def redirect_imprint():
     return redirect(url_for(imprint))
 
-
 #FAQ
 @blueprint.route('/faq')
 def faq():
@@ -50,7 +49,14 @@ def faq():
 def redirect_faq():
     return redirect(url_for(faq))
 
+#how it works
 @blueprint.route('/how_it_works')
 def how_it_works():
     return render_template('simple_pages/how_it_works.html')
+
+@blueprint.route('/how-it-works')
+@blueprint.route('/howitworks')
+def redirect_hiw():
+    return redirect(url_for(how_it_works))
+
 
