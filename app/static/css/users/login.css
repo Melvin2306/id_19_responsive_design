@@ -37,7 +37,7 @@ ul {
     position: absolute;
     color:red;
     right: 20px;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     cursor: pointer;
     user-select: none;
@@ -53,5 +53,5 @@ ul {
 
 #linksignup {
     border: 5px;
-    
+
 }
