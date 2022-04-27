@@ -29,10 +29,10 @@
                     <a href="{{ url_for('simple_pages.root') }}">
                         <img src="{{ url_for('static', filename='images/icon.png') }}" alt="adress-changer logo" id="logo">
                     </a>
-                    <a class ="button" href="/how_it_works">
+                    <a class ="button" id="hiw-button" href="/how_it_works">
                         How it works
                     </a>
-                    <a class ="button" href="/faq">
+                    <a class ="button" id="faq-button" href="/faq">
                         FAQs
                     </a>
                     <div id="placeholder"></div>
@@ -64,10 +64,12 @@
                 <div class="footerElement" id="info">
                     <a class="link" href="{{ url_for('simple_pages.root') }}">
                         Address Changer
-                        ©
-                        <script>
-                            document.write( new Date().getFullYear() );
-                        </script>
+                        <span id="copy_icon">©</span>
+                        <span id="current_year">
+                            <script>
+                                document.write(new Date().getFullYear() );
+                            </script>
+                        </span>
                     </a>
                 </div>
                 

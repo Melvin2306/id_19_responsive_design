@@ -185,24 +185,33 @@ footer {
 
 /* BREAKPOINTS */
 
-@media (max-width:700px) {
-    img#logo {
-        max-height: 50px;
-    }
+/* HEADER */
 
-    button#faq {
+@media (max-width:426px) {
+    #hiw-button {
         display: none;
     }
 }
 
-@media (max-width:560px) {
-    button#signup {
+@media (max-width:502px) {
+    #faq-button {
         display: none;
     }
 }
 
-@media (max-width: 470px) {
-    button#login {
+
+
+
+/* FOOTER */
+
+@media (max-width: 556px) {
+    #current_year {
+        display: none;
+    }
+}
+
+@media (max-width: 518px) {
+    #copy_icon {
         display: none;
     }
 }

@@ -1,11 +1,14 @@
 p {
-    margin: 30px;
+    padding-bottom: 20px;
 }
 
 #email_p {
-    border: 1px;
+    border: 2px;
+    padding: 5px;
+    border-style: solid;
+    margin-bottom: 80px;
 }
 
 #email {
-    margin: 1px;
+    padding-left: 20px;
 }

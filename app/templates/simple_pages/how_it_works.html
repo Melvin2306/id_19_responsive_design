@@ -3,7 +3,7 @@
 {% block title %}How It Works{% endblock %}
 
 {% block csslink %}
-<link rel="stylesheet" href="how_it_works.css" type="text/css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/simple_pages/how_it_works.css')}}" type="text/css">
 {% endblock %}
 
 {% block main %}
@@ -23,21 +23,21 @@
     Try adding your first account and try it out!
 </p>
 <p>
-    If you move to a new location, just add your new address in your "Account Settings" and press the "Send Emails" button in your dashboard. This application will automatically send an email to all your accounts email addresses telling your account provider that you changed your address. The email will look like this:<br><br>
+    If you move to a new location, just add your new address in your "Account Settings" and press the "Send Emails" button in your dashboard. This application will automatically send an email to all your accounts email addresses telling your account provider that you changed your address. The email will look like this:<br>
 </p>
-<p id="email_p">
+<div id="email_p">
     To whomever it may conern,<br><br>
     please note that I moved to a new address and therefore want to change my registered address to the following:<br><br>
     <div id="email">
-        First Name Last Name<br>
-        Additional Information<br>
-        Street Street Number<br>
-        Town Country<br><br>
+        <em>First Name Last Name</em><br>
+        <em>Additional Information</em><br>
+        <em>Street Street Number</em><br>
+        <em>Town Country</em><br><br>
     </div>
     if you have any questions, please contact me via email.<br><br>
     Best regards,<br>
-    First Name Last Name
-</p>
+    <em>First Name Last Name</em>
+</div>
 
 
 
