@@ -1,3 +1,8 @@
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const pw_confirm = document.getElementById('pw_confirm');
+const form = document.getElementById('loginForm');
+
 let passwordInput = document.querySelector('input[type="password"]');
 let passwordStrength= document.getElementById('passwordStrength');
 let poor = document.querySelector('#passwordStrength #poor');
@@ -5,11 +10,12 @@ let weak = document.querySelector('#passwordStrength #weak');
 let strong = document.querySelector('#passwordStrength #strong');
 let passwordInfo = document.getElementById('passwordInfo');
 let poorRegExp = /[a-z]/;
-let weakRegExp = /(?=.*?[0-9])/;;
+let weakRegExp = /(?=.*?[0-9])/;
 let strongRegExp = /(?=.*?[#?!@$%^&*-])/;
 let whitespaceRegExp = /^$|\s+/;
-passwordInput.oninput= function()
-{
+
+
+passwordInput.oninput= function() {
     let passwordValue= passwordInput.value;
     let passwordLength= passwordValue.length;
     let poorPassword= passwordValue.match(poorRegExp);
@@ -29,12 +35,14 @@ passwordInput.oninput= function()
             weakPasswordStrength(passwordLength, poorPassword, weakPassword, strongPassword);
             strongPasswordStrength(passwordLength, poorPassword, weakPassword, strongPassword);
             }
-    }
-else{
-    passwordStrength.style.display = "none";
-    passwordInfo.style.display = "none";
-    }
+        }
+    else{
+        passwordStrength.style.display = "none";
+        passwordInfo.style.display = "none";
+        }
 }
+
+
 
 function poorPasswordStrength(passwordLength, poorPassword, weakPassword, strongPassword){
     if(passwordLength <= 3 && (poorPassword || weakPassword || strongPassword)){
@@ -44,6 +52,8 @@ function poorPasswordStrength(passwordLength, poorPassword, weakPassword, strong
         passwordInfo.textContent = "Your password is too poor";
         }
 }
+
+
 
 function weakPasswordStrength(passwordLength, poorPassword, weakPassword, strongPassword){
     if(passwordLength>= 4 && poorPassword && (weakPassword || strongPassword)){
@@ -55,6 +65,7 @@ function weakPasswordStrength(passwordLength, poorPassword, weakPassword, strong
         weak.classList.remove("active");
     }
 }
+
 
 function strongPasswordStrength(passwordLength, poorPassword, weakPassword, strongPassword){
     if(passwordLength >= 6 && (poorPassword && weakPassword) && strongPassword){
@@ -83,3 +94,21 @@ function showHidePassword(){
     showHide.style.color = "red";
     }
 }
+
+// ------------------------
+
+let checkIfStrong = () => {
+    if (passwordInfo.textContent == "Your password is strong") {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+
+form.addEventListener('submit', (e) => {
+    if (!checkIfStrong()) {
+        e.preventDefault()
+    }
+});

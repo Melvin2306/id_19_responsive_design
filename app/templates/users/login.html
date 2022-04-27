@@ -6,8 +6,12 @@
 <link href="{{ url_for('static', filename='css/users/login.css') }}" rel="stylesheet">
 {% endblock %}
 
+{% block jslink %}
+<script defer src="{{ url_for('static', filename='js/users/login.js')}}"></script>
+{% endblock %}
+
 {% block main %}
-<form id="loginForm" class="container" method="POST">
+<form id="loginform" class="container" method="POST">
     <h1>
         Log In
     </h1>
@@ -16,14 +20,19 @@
     </p>
     <ul>
         <li>
-            <input class="loginform" type="email" name="email" id="email" placeholder="Email" required>
+            <div class= "signupform" id="input">
+                <input class="loginform" type="email" name="email" id="email" placeholder="Email" required>
+            </div>
         </li>
         <li>
-            <input class="loginform" type="password" name="password" id="password" placeholder="Password" required>
+            <div class= "signupform" id="input">
+                <input class="loginform" type="password" name="password" id="password" placeholder="Password" required>
+                <span id="showHide">SHOW</span>
+            </div>
         </li>
     </ul>
     <input type="submit" value="Log In" class="button submit">
-    <div>
+    <div id="linksignup">
         If you don't have an account yet? <br><a class="link" id="linksignup" href="{{ url_for('users.get_signup') }}">Sign Up</a> here
     </div>
     {% if error %}
