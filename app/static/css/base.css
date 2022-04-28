@@ -27,12 +27,7 @@ body {
 
 /* BUTTONS */
 
-button > [href] {
-    color: white;
-    text-decoration: none;
-}
-
-.button, button {
+.button {
     max-height: 40px;
     border: none;
     border-radius: 8px;
@@ -51,10 +46,6 @@ button > [href] {
     background-color: var(--clr-secondary);
     border-color: transparent;
     color: var(--clr-primary);
-}
-
-button:hover {
-    background: rgb(156, 58, 165);
 }
 
 .submit {
