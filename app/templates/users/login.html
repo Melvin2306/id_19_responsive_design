@@ -33,7 +33,7 @@
     </ul>
     <input type="submit" value="Log In" class="button submit">
     <div id="linksignup">
-        If you don't have an account yet? <br><a class="link" id="linksignup" href="{{ url_for('users.get_signup') }}">Sign Up</a> here
+        If you don't have an account yet? <a class="link" id="linksignup" href="{{ url_for('users.get_signup') }}">Sign Up</a> here
     </div>
     {% if error %}
         <p class="generatedErrors">{{ error }}</p>
