@@ -1,3 +1,4 @@
+// DELETE CONFIRMATION
 const delete_button_user = document.getElementById("delete_user");
 
 delete_button_user.addEventListener("click", (e) => {
@@ -15,3 +16,4 @@ delete_button_company.addEventListener("click", (e) => {
         window.location.replace(window.location.href + "/deleteuser");
     }
 });
+

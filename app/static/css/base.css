@@ -37,10 +37,20 @@ button > [href] {
     border: none;
     border-radius: 8px;
     padding: 10px;
-    background: var(--clr-secondary);
-    color: white;
+    /* background: var(--clr-secondary); */
+    border: 1px;
+    border-style: solid;
+    border-color: var(--clr-secondary);
+    color:  var(--clr-secondary);
     text-align: center;
     text-decoration: none;
+    transition: border-color 0.7s, background-color 0.7s, color 0.7s;
+}
+
+.button:hover {
+    background-color: var(--clr-secondary);
+    border-color: transparent;
+    color: var(--clr-primary);
 }
 
 button:hover {
@@ -131,11 +141,34 @@ img#profile {
 
 main {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 h1 {
     margin-bottom: 10px;
+}
+
+/* GO TO TOP BUTTON */
+
+#gototop {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--clr-secondary);
+    color: var(--clr-primary);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#gototop:hover {
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
 }
 
 /* ----------------------------------------------- */
@@ -195,6 +228,14 @@ footer {
 @media (max-width:502px) {
     #faq-button {
         display: none;
+    }
+}
+
+/* MAIN */
+
+@media (max-width:501px) {
+    #gototop {
+        bottom: 70px;
     }
 }
 

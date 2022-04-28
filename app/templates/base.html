@@ -30,10 +30,10 @@
                     <a href="{{ url_for('simple_pages.root') }}">
                         <img src="{{ url_for('static', filename='images/icon.png') }}" alt="adress-changer logo" id="logo">
                     </a>
-                    <a class ="button" id="hiw-button" href="/how_it_works">
+                    <a class ="button" id="hiw-button" href="{{ url_for('simple_pages.how_it_works') }}">
                         How it works
                     </a>
-                    <a class ="button" id="faq-button" href="/faq">
+                    <a class ="button" id="faq-button" href="{{ url_for('simple_pages.faq') }}">
                         FAQs
                     </a>
                     <div id="placeholder"></div>
@@ -60,6 +60,7 @@
             <main>
                 {% block main %}
                 {% endblock %}
+                <button onclick="topFunction()" id="gototop" title="Go to top">^</button>
             </main>
             <footer>
                 <div class="footerElement" id="info">
