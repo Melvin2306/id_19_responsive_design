@@ -8,7 +8,7 @@ app.app_context().push()
 
 initial_user_dict = {
     "Email": "melvin.rinkleff@gmx.de",
-    "Password": 12345678,
+    "Password": "12345678",
     "First Name": "Melvin", 
     "Last Name": "Rinkleff",
     "Street": "Alfred-Jung-Straße", 

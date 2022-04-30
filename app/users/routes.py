@@ -5,7 +5,8 @@ from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from app.users.services.create_user import create_user
-from app.users.models import User
+from app.users.services.create_company import create_company
+from app.users.models import User, Company
 
 
 blueprint = Blueprint('users', __name__)
@@ -60,7 +61,7 @@ def post_login():
         user = User.query.filter_by(user_email=request.form.get('email')).first()
         if not user:
             raise Exception('Email address not found.')
-        elif check_password_hash(request.form.get('password'), user.password):
+        elif not check_password_hash(user.password, request.form.get('password')):
             raise Exception('Incorrect Password.')
         
         login_user(user)
@@ -77,11 +78,24 @@ def get_logout():
     logout_user()
     return redirect(url_for('users.get_login'))
 
+# add account
+@blueprint.get('/<user_id>/create_company')
+def get_create_company(user_id):
+
+    company = create_company(user_id)
+    company_id = company.id
+
+    return redirect(url_for('users.get_company', user_id=user_id, company_id=company_id))
 
 # ### edit account ###
-# @blueprint.get('/<user_id>/<company_id>')
-# def edit_account(user_id):
-#     return redirect(url_for('users.user'))
+@blueprint.get('/<user_id>/company/<company_id>')
+def get_company(user_id, company_id):
+
+    user = User.query.filter_by(id=user_id).first()
+    company = Company.query.filter_by(id=company_id).first()
+
+    return render_template('/users/company.html', user=user, company=company)
+
 
 
 ### settings ###

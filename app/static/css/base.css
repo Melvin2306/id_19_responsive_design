@@ -153,8 +153,10 @@ h1 {
     background-color: var(--clr-secondary);
     color: var(--clr-primary);
     cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
+    padding: 8px;
+    border-radius: 5px;
+    border-color: var(--clr-primary);
+    font-size: 13px;
 }
 
 #gototop:hover {
@@ -194,15 +196,23 @@ footer {
     margin-right: auto;
 }
 
+/* LANGUAGE SELECTOR */
+
 #langSelect {
     width: 175px;
     margin-left: auto;
 }
 
-#langSelector {
+select.langselector {
     float: right;
+    background: var(--clr-primary);
+    color: var(--clr-secondary);
+    appearance: none;
+    border-color: var(--clr-secondary);
 }
-
+select.langselect option{
+    color: var(--clr-secondary);
+}
 
 /* ----------------------------------------------- */
 
@@ -210,14 +220,14 @@ footer {
 
 /* HEADER */
 
-@media (max-width:426px) {
-    #hiw-button {
+@media (max-width:587px) {
+    #faq-button {
         display: none;
     }
 }
 
-@media (max-width:502px) {
-    #faq-button {
+@media (max-width:509px) {
+    #hiw-button {
         display: none;
     }
 }
@@ -226,7 +236,7 @@ footer {
 
 @media (max-width:501px) {
     #gototop {
-        bottom: 70px;
+        bottom: 75px;
     }
 }
 
