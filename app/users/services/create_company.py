@@ -1,8 +1,7 @@
 from app.users.models import User, Company
-from werkzeug.security import generate_password_hash, check_password_hash
 
 def create_company(user_id):
-    # Create new User 
+    # create new company
     new_company = Company(
         user_id = user_id
     )

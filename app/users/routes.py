@@ -1,4 +1,6 @@
 from flask import Blueprint, redirect, render_template, url_for, request, current_app
+
+from app.users.services.edit_company import edit_company
 from .models import User, Company
 from app.users.services.create_user import create_user
 from flask_login import login_user, logout_user, current_user, login_required
@@ -6,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from app.users.services.create_user import create_user
 from app.users.services.create_company import create_company
+from app.users.services.user_settings import user_settings
 from app.users.models import User, Company
 
 
@@ -78,7 +81,7 @@ def get_logout():
     logout_user()
     return redirect(url_for('users.get_login'))
 
-# add account
+### add account ###
 @blueprint.get('/<user_id>/create_company')
 def get_create_company(user_id):
 
@@ -87,7 +90,7 @@ def get_create_company(user_id):
 
     return redirect(url_for('users.get_company', user_id=user_id, company_id=company_id))
 
-# ### edit account ###
+### edit account ###
 @blueprint.get('/<user_id>/company/<company_id>')
 def get_company(user_id, company_id):
 
@@ -96,13 +99,29 @@ def get_company(user_id, company_id):
 
     return render_template('/users/company.html', user=user, company=company)
 
+@blueprint.post('/<user_id>/company/<company_id>')
+def post_company(user_id, company_id):
 
+    company = Company.query.filter_by(id=company_id).first()
+    edit_company(request.form, company)
+    
+    return redirect(url_for('users.user', user_id=user_id))
 
 ### settings ###
-@blueprint.get('/settings')
-def get_settings():
-    return render_template("users/settings.html")
+@blueprint.get('/<user_id>/settings')
+def get_settings(user_id):
 
+    user = User.query.filter_by(id=user_id).first()
+
+    return render_template("users/settings.html", user=user)
+
+@blueprint.post('/<user_id>/settings')
+def post_user_settings(user_id):
+
+    user = User.query.filter_by(id=user_id).first()
+    user_settings(request.form, user)
+    
+    return redirect(url_for('users.user', user_id=user_id))
 
 ### delete user ###
 @blueprint.get('/<user_id>/deleteuser')
@@ -112,8 +131,8 @@ def delete_user(user_id):
 
 
 ### delete company ### 
-@blueprint.get('/<company_id>/deletecompany')
-def delete_company(company_id):
+@blueprint.get('/<user_id>/company/<company_id>/deletecompany')
+def delete_company(user_id, company_id):
     company = Company.query.filter_by(id=company_id).first()
     user_id = current_user.id
     company.delete()

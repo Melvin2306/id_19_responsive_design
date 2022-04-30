@@ -113,7 +113,7 @@ nav > * {
     margin: 0 10px;
 }
 
-img#logo {
+img#logo_loggedin, #logo_guest {
     max-height: 70px;
 }
 

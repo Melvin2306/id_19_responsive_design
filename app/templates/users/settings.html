@@ -8,44 +8,106 @@
 
 {% block main %}
 
-<form id="user_settings" class="container" method="POST">
-    <h1>
-        User Settings
-    </h1>
-    <p>
-        Here you can change your profile settings.
-    </p>
+<form id="user_settings" method="POST">
     <ul>
+        {% if user.user_email %}
         <li>
-            <input type="email" name="email" id="email" placeholder="Email">
+            <label for="user_email">Email:</label>
+            <input type="text" id="user_email" name="user_email" placeholder="{{ user.user_email }}">
         </li>
+        {% endif %}
+        {% if not user.user_email %}
         <li>
-            <input type="password" name="password" id="password" placeholder="Password">
+            <label for="user_email">Email:</label>
+            <input type="text" id="user_email" name="user_email" placeholder="Add Email">
         </li>
+        {% endif %}
+
+        {% if user.first_name %}
         <li>
-            <input type="first_name" name="first_name" id="first_name" placeholder="First Name">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" placeholder="{{ user.first_name }}">
         </li>
+        {% endif %}
+        {% if not user.first_name %}
         <li>
-            <input type="last_name" name="last_name" id="last_name" placeholder="Last Name">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Add First Name">
         </li>
+        {% endif %}
+
+        {% if user.last_name %}
         <li>
-            <input type="street_name" name="street_name" id="street_name" placeholder="Streetname">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" placeholder="{{ user.last_name }}">
         </li>
+        {% endif %}
+        {% if not user.last_name %}
         <li>
-            <input type="zip_code" name="zip_code" id="zip_code" placeholder="ZIP Code">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Add Last Name">
         </li>
+        {% endif %}
+
+        {% if user.street_name %}
         <li>
-            <input type="town" name="town" id="town" placeholder="Town">
+            <label for="street_name">Street and Number:</label>
+            <input type="text" id="street_name" name="street_name" placeholder="{{ user.street_name }}">
         </li>
+        {% endif %}
+        {% if not user.street_name %}
         <li>
-            <input type="country" name="country" id="country" placeholder="Country">
+            <label for="street_name">Street and Number:</label>
+            <input type="text" id="street_name" name="street_name" placeholder="Add Street and Number">
         </li>
-        
+        {% endif %}
+
+        {% if user.zip_code %}
+        <li>
+            <label for="zip_code">ZIP Code:</label>
+            <input type="text" id="zip_code" name="zip_code" placeholder="{{ user.zip_code }}">
+        </li>
+        {% endif %}
+        {% if not user.zip_code %}
+        <li>
+            <label for="zip_code">ZIP Code:</label>
+            <input type="text" id="zip_code" name="zip_code" placeholder="Add ZIP code">
+        </li>
+        {% endif %}
+
+        {% if user.town %}
+        <li>
+            <label for="town">Town:</label>
+            <input type="text" id="town" name="town" placeholder="{{ user.town }}">
+        </li>
+        {% endif %}
+        {% if not user.town %}
+        <li>
+            <label for="town">Town:</label>
+            <input type="text" id="town" name="town" placeholder="Add Town">
+        </li>
+        {% endif %}
+
+        {% if user.country %}
+        <li>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="{{ user.country }}">
+        </li>
+        {% endif %}
+        {% if not user.country %}
+        <li>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="Add Country">
+        </li>
+        {% endif %}
     </ul>
-    <input type="submit" value="user_settings" class="submit">
-    {% if error %}
-        <p class="generatedErrors">{{ error }}</p>
-    {% endif %}
+    <input type="submit" value="Save Changes" class="button" id="submitbutton">
 </form>
 
+{% if error %}
+    <p class="generatedErrors">{{ error }}</p>
+{% endif %}
+
+<a class="button account_btns" id="return_user" href="{{ url_for('users.user', user_id=user.id)}}">Return to Dashboard</a>
+<a class="button account_btns" id="delete_company" href="{{ url_for('users.delete_user', user_id=user.id) }}">Delete User</a>
 {% endblock %}

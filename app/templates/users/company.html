@@ -27,58 +27,59 @@
         </li>
         {% endif %}
 
-        {% if company.name %}
+        {% if company.category %}
         <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="{{ company.name }}">
+            <label for="company_category">Category:</label>
+            <input type="text" id="company_category" name="company_category" placeholder="{{ company.category }}">
         </li>
         {% endif %}
-        {% if not company.name %}
+        {% if not company.category %}
         <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="Add Company">
-        </li>
-        {% endif %}
-
-        {% if company.name %}
-        <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="{{ company.name }}">
-        </li>
-        {% endif %}
-        {% if not company.name %}
-        <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="Add Company">
+            <label for="company_category">Category:</label>
+            <input type="text" id="company_category" name="company_category" placeholder="Add Category">
         </li>
         {% endif %}
 
-        {% if company.name %}
+        {% if company.company_email %}
         <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="{{ company.name }}">
+            <label for="company_company_email">Company-Email:</label>
+            <input type="text" id="company_company_email" name="company_company_email" placeholder="{{ company.company_email }}">
         </li>
         {% endif %}
-        {% if not company.name %}
+        {% if not company.company_email %}
         <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="Add Company">
+            <label for="company_company_email">Company-Email:</label>
+            <input type="text" id="company_company_email" name="company_company_email" placeholder="Add Company-Email">
         </li>
         {% endif %}
-        
-        {% if company.name %}
+
+        {% if company.phone_number %}
         <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="{{ company.name }}">
+            <label for="company_phone_number">Phone Number:</label>
+            <input type="text" id="company_phone_number" name="company_phone_number" placeholder="{{ company.phone_number }}">
         </li>
         {% endif %}
-        {% if not company.name %}
+        {% if not company.phone_number %}
         <li>
-            <label for="company_name">Company:</label>
-            <input type="text" id="company_name" name="company_name" placeholder="Add Company">
+            <label for="company_phone_number">Phone Number:</label>
+            <input type="text" id="company_phone_number" name="company_phone_number" placeholder="Add Phone Number">
+        </li>
+        {% endif %}
+
+        {% if company.description %}
+        <li>
+            <label for="company_description">Description:</label>
+            <input type="text" id="company_description" name="company_description" placeholder="{{ company.description }}">
+        </li>
+        {% endif %}
+        {% if not company.description %}
+        <li>
+            <label for="company_description">Description:</label>
+            <input type="text" id="company_description" name="company_description" placeholder="Add Description">
         </li>
         {% endif %}
     </ul>
+    <input type="submit" value="Save Changes" class="button" id="submitbutton">
 </form>
 
 {% if error %}
@@ -86,6 +87,6 @@
 {% endif %}
 
 <a class="button account_btns" id="return_user" href="{{ url_for('users.user', user_id=user.id)}}">Return to Dashboard</a>
-<a class="button account_btns" id="delete_company" href="{{ url_for('users.delete_company', company_id=company.id) }}">Delete Company</a>
-
+<a class="button account_btns" id="delete_company" href="{{ url_for('users.delete_company', user_id=user.id, company_id=company.id) }}">Delete Company</a>
+<a id="hidden_delete" href="{{ url_for('users.delete_company', user_id=user.id, company_id=company.id) }}"></a>
 {% endblock %}
