@@ -5,7 +5,7 @@ import uuid
 class User(db.Model, CRUDMixin, UserMixin):
     id = db.Column('id', db.Text, default=lambda: str(uuid.uuid4()), primary_key=True)
     user_email = db.Column(db.String(40), index = True, unique = True)
-    password = db.Column(db.String(50))
+    password = db.Column(db.String(999))
     first_name = db.Column(db.String(30))
     last_name = db.Column(db.String(30))
     street_name = db.Column(db.String(40))
