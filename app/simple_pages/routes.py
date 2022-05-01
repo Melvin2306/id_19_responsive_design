@@ -12,7 +12,7 @@ def root():
 @blueprint.route('/landingpage')
 @blueprint.route('/landing')
 def redirect_root():
-    return redirect(url_for(root))
+    return redirect(url_for('simple_pages.root'))
 
 ###linking pages and redirecting###
 #about
@@ -25,7 +25,7 @@ def about():
 @blueprint.route('/info')
 @blueprint.route('/information')
 def redirect_about():
-    return redirect(url_for(about))
+    return redirect(url_for('simple_pages.about'))
 
 #imprint
 @blueprint.route('/imprint')
@@ -36,9 +36,9 @@ def imprint():
 @blueprint.route('/legal')
 @blueprint.route('/legal-info')
 def redirect_imprint():
-    return redirect(url_for(imprint))
+    return redirect(url_for('simple_pages.imprint'))
 
-#imprint
+#privacy policy
 @blueprint.route('/privacy_policy')
 def privacy_policy():
     return render_template('simple_pages/privacy_policy.html')
@@ -58,7 +58,7 @@ def faq():
 @blueprint.route('/frequentlyaskedquestions')
 @blueprint.route('/frequently-asked-questions')
 def redirect_faq():
-    return redirect(url_for(faq))
+    return redirect(url_for('simple_pages.faq'))
 
 #how it works
 @blueprint.route('/how_it_works')
@@ -68,6 +68,6 @@ def how_it_works():
 @blueprint.route('/how-it-works')
 @blueprint.route('/howitworks')
 def redirect_hiw():
-    return redirect(url_for(how_it_works))
+    return redirect(url_for('simple_pages.how_it_works'))
 
 
