@@ -3,7 +3,7 @@ from flask_login import UserMixin
 import uuid
 
 class User(db.Model, CRUDMixin, UserMixin):
-    id = db.Column('id', db.Text(length=36), default=lambda: str(uuid.uuid4()), primary_key=True)
+    id = db.Column('id', db.Text, default=lambda: str(uuid.uuid4()), primary_key=True)
     user_email = db.Column(db.String(40), index = True, unique = True)
     password = db.Column(db.String(50))
     first_name = db.Column(db.String(30))
@@ -15,7 +15,7 @@ class User(db.Model, CRUDMixin, UserMixin):
     companies = db.relationship('Company', backref='user', lazy=True)
 
 class Company(db.Model, CRUDMixin):
-    id = db.Column('id', db.Text(length=36), default=lambda: str(uuid.uuid4()), primary_key=True)
+    id = db.Column('id', db.Text, default=lambda: str(uuid.uuid4()), primary_key=True)
     user_id = db.Column(db.Text, db.ForeignKey('user.id'))
     name = db.Column(db.String(30))
     category = db.Column(db.String(20))
