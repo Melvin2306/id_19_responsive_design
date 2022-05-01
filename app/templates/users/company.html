@@ -87,6 +87,6 @@
 {% endif %}
 
 <a class="button account_btns" id="return_user" href="{{ url_for('users.user', user_id=user.id)}}">Return to Dashboard</a>
-<a class="button account_btns" id="delete_company" href="{{ url_for('users.delete_company', user_id=user.id, company_id=company.id) }}">Delete Company</a>
+<a class="button account_btns" id="delete_company">Delete Company</a>
 <a id="hidden_delete" href="{{ url_for('users.delete_company', user_id=user.id, company_id=company.id) }}"></a>
 {% endblock %}

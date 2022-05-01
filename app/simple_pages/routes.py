@@ -38,6 +38,17 @@ def imprint():
 def redirect_imprint():
     return redirect(url_for(imprint))
 
+#imprint
+@blueprint.route('/privacy_policy')
+def privacy_policy():
+    return render_template('simple_pages/privacy_policy.html')
+
+# @blueprint.route('/impressum')
+# @blueprint.route('/legal')
+# @blueprint.route('/legal-info')
+# def redirect_imprint():
+#     return redirect(url_for(imprint))
+
 #FAQ
 @blueprint.route('/faq')
 def faq():

@@ -6,7 +6,25 @@
 <link href="{{ url_for('static', filename='css/users/settings.css') }}" rel="stylesheet">
 {% endblock %}
 
+{% block jslink %}
+<script defer src="{{ url_for('static', filename='js/users/settings.js')}}"></script>
+{% endblock %}
+
 {% block main %}
+
+{% if not user.first_name %}
+<p>
+    Welcome to the Adress Changer new User!<br>
+    Please set up your account here:
+</p>
+{% endif %}
+
+{% if user.first_name %}
+<p>
+    Welcome to the Adress Changer, {{ user.first_name.capitalize() }}!<br>
+    Here you can change your Account Settings:
+</p>
+{% endif %}
 
 <form id="user_settings" method="POST">
     <ul>
@@ -109,5 +127,7 @@
 {% endif %}
 
 <a class="button account_btns" id="return_user" href="{{ url_for('users.user', user_id=user.id)}}">Return to Dashboard</a>
-<a class="button account_btns" id="delete_company" href="{{ url_for('users.delete_user', user_id=user.id) }}">Delete User</a>
+<a class="button account_btns" id="delete_user">Delete User</a>
+<a id="hidden_delete" href="{{ url_for('users.delete_user', user_id=current_user.id) }}"></a>
+
 {% endblock %}
