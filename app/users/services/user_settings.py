@@ -5,6 +5,9 @@ def user_settings(form_data, user):
     if form_data.get('user_email'):
         user.user_email=form_data.get('user_email').lower()
 
+    if form_data.get('user_password'):
+        user.password=form_data.get('user_password')
+
     if form_data.get('first_name'):
         user.first_name=form_data.get('first_name').capitalize()
 

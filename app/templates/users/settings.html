@@ -26,7 +26,7 @@
 </p>
 {% endif %}
 
-<form id="user_settings" method="POST">
+<form id="user_settings" class="container" method="POST">
     <ul>
         {% if user.user_email %}
         <li>
@@ -40,6 +40,27 @@
             <input type="text" id="user_email" name="user_email" placeholder="Add Email">
         </li>
         {% endif %}
+        
+
+
+        <li>
+            <div class= "password_checker" id="input">
+                <label for="user_password">Password:</label>
+                <input type="user_password" id="user_password" name="user_password" placeholder="Password">
+                <span id="showHide">SHOW</span>
+            </div>
+            <div id="passwordStrength">
+                <span id="poor"></span>
+                <span id="weak"></span>
+                <span id="strong"></span>
+            </div>
+            <div id="passwordInfo"></div>
+        </li>
+
+        <li>
+            <label for="user_password_confirm">Confirm New Password:</label>
+            <input type="text" id="user_password_confirm" name="user_password_confirm" placeholder="Confirm Password">
+        </li>
 
         {% if user.first_name %}
         <li>

@@ -103,9 +103,15 @@ def get_company(user_id, company_id):
 def post_company(user_id, company_id):
 
     company = Company.query.filter_by(id=company_id).first()
-    edit_company(request.form, company)
-    
-    return redirect(url_for('users.user', user_id=user_id))
+    try:
+        if request.form.get('user_password_') != request.form.get('user_password_confirm'):
+            raise Exception('Passwords do not match.')
+        edit_company(request.form, company)
+        return redirect(url_for('users.user', user_id=user_id))
+
+    except Exception as error_message:
+        error = error_message or 'An error occurred while changing your password. Please try again.'
+        return render_template('users/get_company', error=error)
 
 ### settings ###
 @blueprint.get('/<user_id>/settings')
