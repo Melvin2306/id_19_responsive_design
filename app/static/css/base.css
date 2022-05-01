@@ -29,16 +29,15 @@ body {
 
 .button {
     max-height: 40px;
-    border: none;
     border-radius: 8px;
     padding: 10px;
-    /* background: var(--clr-secondary); */
     border: 1px;
     border-style: solid;
     border-color: var(--clr-secondary);
     color:  var(--clr-secondary);
     text-align: center;
     text-decoration: none;
+    background-color: transparent;
     transition: border-color 0.7s, background-color 0.7s, color 0.7s;
 }
 
@@ -49,20 +48,8 @@ body {
 }
 
 .submit {
-    max-height: 40px;
-    width: 192px;
-    border: black;
-    border: 20px;
-    border-radius: 8px;
-    padding: 10px;
-    background: white;
-    color: var(--clr-primary);
-    text-align: center;
-    text-decoration: none;
-}
-
-.submit:hover {
-    background: rgb(156, 58, 165)
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* IMAGE */

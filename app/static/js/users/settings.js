@@ -117,7 +117,9 @@ let checkIfStrong = () => {
 
 
 form.addEventListener('submit', (e) => {
-    if (!checkIfStrong()) {
-        e.preventDefault()
+    if (passwordValue != "") {
+        if (!checkIfStrong()) {
+            e.preventDefault()
+        }
     }
 });

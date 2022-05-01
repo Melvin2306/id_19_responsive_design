@@ -141,14 +141,15 @@
         {% endif %}
     </ul>
     <input type="submit" value="Save Changes" class="button account_btns" id="submitbutton">
+    <a class="button account_btns" id="return_user" href="{{ url_for('users.user', user_id=user.id)}}">Return to Dashboard</a>
+    <a class="button account_btns" id="delete_user">Delete User</a>
 </form>
 
 {% if error %}
     <p class="generatedErrors">{{ error }}</p>
 {% endif %}
 
-<a class="button account_btns" id="return_user" href="{{ url_for('users.user', user_id=user.id)}}">Return to Dashboard</a>
-<a class="button account_btns" id="delete_user">Delete User</a>
+
 <a id="hidden_delete" href="{{ url_for('users.delete_user', user_id=current_user.id) }}"></a>
 
 {% endblock %}

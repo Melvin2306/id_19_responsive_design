@@ -6,6 +6,7 @@ ul {
     padding: 0;
     list-style: none;
     width: 100%;
+    margin-bottom: 8px;
 }
 
 p {
@@ -21,31 +22,24 @@ li {
 #user_settings {
     width: 30%;
     display: flex;
+    flex-wrap: wrap;
+
     position: relative;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-/* Password Checker */
-/* .password_checker {
-    width: 30%;
-    display: flex;
-    position: relative;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid lightgrey;
-    margin-bottom: 5px;
-} */
-
 .input_field {
     position: absolute;
     right:0;
 }
 
+.account_btns {
+    margin-right: 5px;
+}
 
 #input input {
-    /* position: absolute; */
     right: 0;
 }
 #input #showHide{
@@ -105,6 +99,28 @@ li {
 }
 #passwordInfo #strong{
     color: green;
+}
+
+#submitbutton {
+    font-size: 20px;
+    max-height: fit-content;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--clr-secondary);
+    color:  var(--clr-secondary);
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 5px;
+    transition: border-color 0.7s, background-color 0.7s, color 0.7s;
+}
+
+#submitbutton:hover {
+    background-color: var(--clr-secondary);
+    border-color: transparent;
+    color: var(--clr-primary);
 }
 
 /* Hidden Delete */
