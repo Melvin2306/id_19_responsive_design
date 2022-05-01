@@ -9,8 +9,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from app.users.services.create_user import create_user
 from app.users.services.create_company import create_company
 from app.users.services.user_settings import user_settings
+from app.users.services.check_current_user import check_current_user
 from app.users.models import User, Company
-
 
 blueprint = Blueprint('users', __name__)
 
@@ -20,9 +20,14 @@ blueprint = Blueprint('users', __name__)
 def user(user_id):
 
     user = User.query.filter_by(id=user_id).first()
-    companies = Company.query.filter_by(user_id=user_id)
 
-    return render_template('/users/user.html', user=user, companies=companies)
+    if check_current_user(user):
+        companies = Company.query.filter_by(user_id=user_id)
+        return render_template('/users/user.html', user=user, companies=companies)
+    else:
+        return "you are not allowed to see this page"
+
+    
 
 
 ### signup ###
@@ -85,19 +90,31 @@ def get_logout():
 @blueprint.get('/<user_id>/create_company')
 def get_create_company(user_id):
 
-    company = create_company(user_id)
-    company_id = company.id
+    user = User.query.filter_by(id=user_id).first()
 
-    return redirect(url_for('users.get_company', user_id=user_id, company_id=company_id))
+    if check_current_user(user):
+        company = create_company(user_id)
+        company_id = company.id
+
+        return redirect(url_for('users.get_company', user_id=user_id, company_id=company_id))
+    else:
+        return "you are not allowed to see this page"
+
 
 ### edit account ###
 @blueprint.get('/<user_id>/company/<company_id>')
 def get_company(user_id, company_id):
 
     user = User.query.filter_by(id=user_id).first()
-    company = Company.query.filter_by(id=company_id).first()
 
-    return render_template('/users/company.html', user=user, company=company)
+    if check_current_user(user):
+        company = Company.query.filter_by(id=company_id).first()
+        if company.user_id == current_user.id:
+            return render_template('/users/company.html', user=user, company=company)
+        else:
+            return "you are not allowed to see this page"
+    else:
+        return "you are not allowed to see this page"
 
 @blueprint.post('/<user_id>/company/<company_id>')
 def post_company(user_id, company_id):
@@ -119,7 +136,11 @@ def get_settings(user_id):
 
     user = User.query.filter_by(id=user_id).first()
 
-    return render_template("users/settings.html", user=user)
+    if check_current_user(user):
+        user = User.query.filter_by(id=user_id).first()
+        return render_template("users/settings.html", user=user)
+    else:
+        return "you are not allowed to see this page"
 
 @blueprint.post('/<user_id>/settings')
 def post_user_settings(user_id):
@@ -132,15 +153,30 @@ def post_user_settings(user_id):
 ### delete user ###
 @blueprint.get('/<user_id>/deleteuser')
 def delete_user(user_id):
-    current_user.delete()
-    return redirect(url_for('users.get_login'))
+
+    user = User.query.filter_by(id=user_id).first()
+    if check_current_user(user):
+        current_user.delete()
+        return redirect(url_for('users.get_login'))
+
+    else:
+        return "you are not allowed to see this page"
 
 
 ### delete company ### 
 @blueprint.get('/<user_id>/company/<company_id>/deletecompany')
 def delete_company(user_id, company_id):
-    company = Company.query.filter_by(id=company_id).first()
-    user_id = current_user.id
-    company.delete()
+
+    user = User.query.filter_by(id=user_id).first()
+
+    if check_current_user(user):
+        company = Company.query.filter_by(id=company_id).first()
+        if company.user_id == current_user.id:
+            user_id = current_user.id
+            company.delete()
+        else:
+            return "you are not allowed to see this page"
+    else:
+        return "you are not allowed to see this page"
 
     return redirect(url_for('users.user', user_id=user_id))
