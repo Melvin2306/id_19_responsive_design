@@ -7,47 +7,53 @@
 {% endblock %}
 
 {% block main %}
-<div id="background_image"></div>
+
+<img id="mailbox_image" src="https://www.gibraltarmailboxes.com/wp-content/uploads/2017/06/Elite-Post-Mount-Mailbox.jpg" alt="picture mailbox">
+
+
 <h1>
     The Address Changer
 </h1>
-
-<section class="main-text">
-    <p>
+<div id="text_left">
+    <p class="p_left">
         Are you annoyed by changing or even forgetting to change your address with all your accounts?
     </p>
-    <p>
+
+    <p class="p_left">
         We got you!
     </p>
-    <p>
+
+    <p class="p_left">
         The Address Changer - the best way to keep track of all your accounts and your easy way of changing your address for all your accounts with one click!
     </p>
-</section>
+</div>
 
-<div class="columns">
-    <section class="column" id="column1">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
-    </section>
-    <section class="column" id="column2">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
-    </section>
-    <section class="column" id="column3">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
-    </section>
-    <section class="column" id="column4">
-        <h3>Lorem ipsum</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        </p>
-    </section>
+<div id="text_lower">
+<h2>Easy to set up</h2>
+
+<p>
+    It is super easy to set up an Address Changer account.
+    Just
+    <a class ="link" id="signup" href="{{ url_for('users.get_signup') }}">
+        sign up
+    </a>
+    with your email address and a password.
+    After the sign up add your account details with the button "Account Settings".
+</p>
+
+<h2>Easy to add accounts</h2>
+
+<p>
+    When you are logged in you can add companies with the "Add Company" button.
+    You can also easily edit and delete companies.
+</p>
+
+<h2>Change your address with one click</h2>
+
+<p>
+    When you added all your accounts and you move to a new location you just need to change your address in the account settings.
+    After that you only need to click "Send Emails to all accounts".
+    That's it! Now your address is changed for all your accounts.
+</p>
 </div>
 {% endblock %}

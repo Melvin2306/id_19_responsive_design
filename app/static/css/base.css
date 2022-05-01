@@ -55,7 +55,7 @@ body {
 /* IMAGE */
 
 img {
-    display: block; /* to remove the 4px below the img */
+    display: block;
 }
 
 /* PARAGRAPH */
