@@ -2,13 +2,16 @@ from unicodedata import category
 from app.app import create_app
 from app.users.models import Company, User
 from app.extensions.database import db
+from werkzeug.security import generate_password_hash
 
 app = create_app()
 app.app_context().push()
 
+hashed_password=generate_password_hash("12345678")
+
 initial_user_dict = {
     "Email": "melvin.rinkleff@gmx.de",
-    "Password": "12345678",
+    "Password": hashed_password,
     "First Name": "Melvin", 
     "Last Name": "Rinkleff",
     "Street": "Alfred-Jung-Straße", 

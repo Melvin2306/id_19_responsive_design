@@ -1,3 +1,56 @@
+ul {
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        margin-bottom: 8px;
+}
+
+li {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#edit_company {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.input_field {
+    position: absolute;
+    right: 45%;
+}
+
+.account_btns {
+    margin-right: 5px;
+}
+
+#submitbutton {
+    max-height: fit-content;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--clr-secondary);
+    color:  var(--clr-secondary);
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 5px;
+    transition: border-color 0.7s, background-color 0.7s, color 0.7s;
+}
+
+#submitbutton:hover {
+    background-color: var(--clr-secondary);
+    border-color: transparent;
+    color: var(--clr-primary);
+}
+
 #hidden_delete {
     display: none;
 }
