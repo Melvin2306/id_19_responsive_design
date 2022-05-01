@@ -1,40 +1,60 @@
+html {
+    font-size: 20px;
+}
+
 ul {
     padding: 0;
     list-style: none;
+    width: 100%;
+}
+
+p {
+    padding-bottom: 10px;
+}
+
+li {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#user_settings {
+    width: 30%;
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 /* Password Checker */
-.password_checker {
+/* .password_checker {
     width: 30%;
     display: flex;
     position: relative;
     width: 100%;
     padding: 10px;
     border: 1px solid lightgrey;
-    font-size: 15px;
     margin-bottom: 5px;
+} */
+
+.input_field {
+    position: absolute;
+    right:0;
 }
 
-#input{
-    width: 100%;
-    border: none;
-    padding: 0;
-    display: flex;
-    position: relative;
-}
+
 #input input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid lightgrey;
-    font-size: 15px;
+    /* position: absolute; */
+    right: 0;
 }
 #input #showHide{
     font-size: 12px;
     font-weight: 600;
     position: absolute;
     color:red;
-    right: 20px;
-    top: 50%;
+    right: 5px;
+    top: 10px;
     transform: translateY(-50%);
     cursor: pointer;
     user-select: none;

@@ -1,6 +1,4 @@
-const email = document.getElementById('email');
 const password = document.getElementById('password');
-const pw_confirm = document.getElementById('pw_confirm');
 const form = document.getElementById('loginForm');
 
 let passwordInput = document.querySelector('input[type="password"]');

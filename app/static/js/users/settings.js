@@ -12,7 +12,7 @@ delete_button_account.addEventListener("click", (e) => {
 const password = document.getElementById('user_password');
 const form = document.getElementById('user_settings');
 
-let passwordInput = document.querySelector('input[type="user_password"]');
+let passwordInput = document.querySelector('input[type="password"]');
 let passwordStrength= document.getElementById('passwordStrength');
 let poor = document.querySelector('#passwordStrength #poor');
 let weak = document.querySelector('#passwordStrength #weak');
@@ -92,13 +92,13 @@ function strongPasswordStrength(passwordLength, poorPassword, weakPassword, stro
 let showHide = document.querySelector('#showHide');
 showHide.onclick = function(){showHidePassword()}
 function showHidePassword(){
-    if(passwordInput.type == "user_password"){
+    if(passwordInput.type == "password"){
         passwordInput.type = "text";
         showHide.textContent = "HIDE";
         showHide.style.color = "green";
     }
     else{
-    passwordInput.type = "user_password";
+    passwordInput.type = "password";
     showHide.textContent = "SHOW";
     showHide.style.color = "red";
     }

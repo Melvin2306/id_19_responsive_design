@@ -31,13 +31,13 @@
         {% if user.user_email %}
         <li>
             <label for="user_email">Email:</label>
-            <input type="text" id="user_email" name="user_email" placeholder="{{ user.user_email }}">
+            <input type="text" id="user_email" name="user_email" class="input_field" placeholder="{{ user.user_email }}">
         </li>
         {% endif %}
         {% if not user.user_email %}
         <li>
             <label for="user_email">Email:</label>
-            <input type="text" id="user_email" name="user_email" placeholder="Add Email">
+            <input type="text" id="user_email" name="user_email" class="input_field" placeholder="Add Email">
         </li>
         {% endif %}
         
@@ -46,7 +46,7 @@
         <li>
             <div class= "password_checker" id="input">
                 <label for="user_password">Password:</label>
-                <input type="user_password" id="user_password" name="user_password" placeholder="Password">
+                <input type="password" id="user_password" name="user_password" class="input_field" placeholder="Password">
                 <span id="showHide">SHOW</span>
             </div>
             <div id="passwordStrength">
@@ -59,88 +59,88 @@
 
         <li>
             <label for="user_password_confirm">Confirm New Password:</label>
-            <input type="text" id="user_password_confirm" name="user_password_confirm" placeholder="Confirm Password">
+            <input type="password" id="user_password_confirm" name="user_password_confirm" class="input_field" placeholder="Confirm Password">
         </li>
 
         {% if user.first_name %}
         <li>
             <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name" placeholder="{{ user.first_name }}">
+            <input type="text" id="first_name" name="first_name" class="input_field" placeholder="{{ user.first_name }}">
         </li>
         {% endif %}
         {% if not user.first_name %}
         <li>
             <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name" placeholder="Add First Name">
+            <input type="text" id="first_name" name="first_name" class="input_field" placeholder="Add First Name">
         </li>
         {% endif %}
 
         {% if user.last_name %}
         <li>
             <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name" placeholder="{{ user.last_name }}">
+            <input type="text" id="last_name" name="last_name" class="input_field" placeholder="{{ user.last_name }}">
         </li>
         {% endif %}
         {% if not user.last_name %}
         <li>
             <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name" placeholder="Add Last Name">
+            <input type="text" id="last_name" name="last_name" class="input_field" placeholder="Add Last Name">
         </li>
         {% endif %}
 
         {% if user.street_name %}
         <li>
             <label for="street_name">Street and Number:</label>
-            <input type="text" id="street_name" name="street_name" placeholder="{{ user.street_name }}">
+            <input type="text" id="street_name" name="street_name" class="input_field" placeholder="{{ user.street_name }}">
         </li>
         {% endif %}
         {% if not user.street_name %}
         <li>
             <label for="street_name">Street and Number:</label>
-            <input type="text" id="street_name" name="street_name" placeholder="Add Street and Number">
+            <input type="text" id="street_name" name="street_name" class="input_field" placeholder="Add Street and Number">
         </li>
         {% endif %}
 
         {% if user.zip_code %}
         <li>
             <label for="zip_code">ZIP Code:</label>
-            <input type="text" id="zip_code" name="zip_code" placeholder="{{ user.zip_code }}">
+            <input type="text" id="zip_code" name="zip_code" class="input_field" placeholder="{{ user.zip_code }}">
         </li>
         {% endif %}
         {% if not user.zip_code %}
         <li>
             <label for="zip_code">ZIP Code:</label>
-            <input type="text" id="zip_code" name="zip_code" placeholder="Add ZIP code">
+            <input type="text" id="zip_code" name="zip_code" class="input_field" placeholder="Add ZIP code">
         </li>
         {% endif %}
 
         {% if user.town %}
         <li>
             <label for="town">Town:</label>
-            <input type="text" id="town" name="town" placeholder="{{ user.town }}">
+            <input type="text" id="town" name="town" class="input_field" placeholder="{{ user.town }}">
         </li>
         {% endif %}
         {% if not user.town %}
         <li>
             <label for="town">Town:</label>
-            <input type="text" id="town" name="town" placeholder="Add Town">
+            <input type="text" id="town" name="town" class="input_field" placeholder="Add Town">
         </li>
         {% endif %}
 
         {% if user.country %}
         <li>
             <label for="country">Country:</label>
-            <input type="text" id="country" name="country" placeholder="{{ user.country }}">
+            <input type="text" id="country" name="country" class="input_field" placeholder="{{ user.country }}">
         </li>
         {% endif %}
         {% if not user.country %}
         <li>
             <label for="country">Country:</label>
-            <input type="text" id="country" name="country" placeholder="Add Country">
+            <input type="text" id="country" name="country" class="input_field" placeholder="Add Country">
         </li>
         {% endif %}
     </ul>
-    <input type="submit" value="Save Changes" class="button" id="submitbutton">
+    <input type="submit" value="Save Changes" class="button account_btns" id="submitbutton">
 </form>
 
 {% if error %}
