@@ -25,7 +25,7 @@ def user(user_id):
         companies = Company.query.filter_by(user_id=user_id)
         return render_template('/users/user.html', user=user, companies=companies)
     else:
-        return "you are not allowed to see this page"
+        return "Permission Denied: You are not authorized to view this content"
 
     
 
@@ -98,7 +98,7 @@ def get_create_company(user_id):
 
         return redirect(url_for('users.get_company', user_id=user_id, company_id=company_id))
     else:
-        return "you are not allowed to see this page"
+        return "Permission Denied: You are not authorized to view this content"
 
 
 ### edit account ###
@@ -112,9 +112,9 @@ def get_company(user_id, company_id):
         if company.user_id == current_user.id:
             return render_template('/users/company.html', user=user, company=company)
         else:
-            return "you are not allowed to see this page"
+            return "Permission Denied: You are not authorized to view this content"
     else:
-        return "you are not allowed to see this page"
+        return "Permission Denied: You are not authorized to view this content"
 
 @blueprint.post('/<user_id>/company/<company_id>')
 def post_company(user_id, company_id):
@@ -140,7 +140,7 @@ def get_settings(user_id):
         user = User.query.filter_by(id=user_id).first()
         return render_template("users/settings.html", user=user)
     else:
-        return "you are not allowed to see this page"
+        return "Permission Denied: You are not authorized to view this content"
 
 @blueprint.post('/<user_id>/settings')
 def post_user_settings(user_id):
@@ -160,7 +160,7 @@ def delete_user(user_id):
         return redirect(url_for('users.get_login'))
 
     else:
-        return "you are not allowed to see this page"
+        return "Permission Denied: You are not authorized to view this content"
 
 
 ### delete company ### 
@@ -175,8 +175,8 @@ def delete_company(user_id, company_id):
             user_id = current_user.id
             company.delete()
         else:
-            return "you are not allowed to see this page"
+            return "Permission Denied: You are not authorized to view this content"
     else:
-        return "you are not allowed to see this page"
+        return "Permission Denied: You are not authorized to view this content"
 
     return redirect(url_for('users.user', user_id=user_id))
