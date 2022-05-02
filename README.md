@@ -3,7 +3,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Features](#features)
-* [Setup and Running](#How to Setup and Run the application)
+* [Setup and Running](#setup)
 * [Technologies](#technologies)
 
 ## General info
@@ -51,7 +51,7 @@ The app should let the user:
 * signing in through Google
 * add address with Google Maps API
 
-## How to Setup and Run the application
+## Setup
 
 ### 1. Install the latest python3 version
 
