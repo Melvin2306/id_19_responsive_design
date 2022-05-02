@@ -3,6 +3,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Features](#features)
+* [Setup and Running](#How to Setup and Run the application)
 * [Technologies](#technologies)
 
 ## General info
@@ -40,14 +41,72 @@ The app should let the user:
 
 >As a user, I want to add my address and be able to change the address (correcting mistakes). 
 
->As a user, I want to add new accounts and be able to change them (mistakes, new information).
+>As a user, I want to add new accounts and be able to change them (mistakes, new information, etc.).
 
 >As a user, I want to change my address and be able to send emails to the support teams of the accounts automatically.
 
 ### Nice-to-have features
 
 * print out a letter which I'm able to send directly to the account team
-* signing in through google
+* signing in through Google
+* add address with Google Maps API
+
+## How to Setup and Run the application
+
+### 1. Install the latest python3 version
+
+You should install a version of python3. On Mac, it should cone pre-installed but you should consider updating if you do not have a version of python3 but python2 (check your version by running `python3 --version` in the command line).
+
+### 2. Create a virtual environment
+
+Because the project will have some required packages like flask and we do not want to interfere with all the packages on your computer, you have to create a virtual environment. Enter `python3 -m venv venv` into the command line.
+
+> Note: It is crucial that you do this step while being in the right directory. This should be a copy of this GitHub repository on your computer.
+If you want to run your local flask server, you will need to do that with the virtual environment activated.
+
+To activate your virtual environment, type `source venv/bin/activate` on Mac & Linux.
+
+(Be sure deactivate the virtual environment when you want to use the command line like normal again. Run `deactivate` for that. If the comamnd line doesn't show "(venv)" it means, the environment isn't active.)
+
+### 3. Define environment variables in a .env file
+
+First, create a .env file inside of the directory. In here you have to set some basic variables for your virtual environment to work properly.
+
+Paste these in the .env file and save:
+
+`FLASK_ENV=development`
+
+`DATABASE_URL=sqlite:///database.db`
+
+`FLASK_APP=run.py`
+
+`SECRET_KEY=`
+
+> Important: you need to set a secret key after the equal sign. You can fin random keys [here](https://randomkeygen.com).
+### 4. Install all required packages
+
+> Be sure that your virtual environment is activated!
+Then run `python -m pip install -r requirements.txt`
+
+This will install all packages that are used in this project automatically. No need to install extra packages.
+
+### 5. Database Setup
+
+You will need to run four commands in your terminal to set up the database and fill it with some initial data for the game:
+
+> Be sure that your virtual environment is activated and you did step 4!
+1. `flask db init`
+2. `flask db migrate -m 'first migration'`
+3. `flask db upgrade`
+4. `python -m app.scripts.seed`
+
+### 6. Run the server
+
+Now everything is ready to run:
+
+* Run the server with `flask run`
+* Stop the server with the keyboard shortcut ctrl+c
+
 ## Technologies
 Project is created with:
 * alembic: 1.7.7
@@ -74,8 +133,3 @@ Project is created with:
 * tomli: 2.0.1
 * Werkzeug: 2.1.1
 * zipp: 3.8.0
-
-All programs can easily be installed with the requirements.txt file. Just type
-```
-pip install -r requirements.txt
-```
