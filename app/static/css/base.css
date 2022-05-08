@@ -91,7 +91,7 @@ nav {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content:flex-start;
+    justify-content: flex-start;
     height: inherit;
     padding: 12px 12px;
 }
@@ -112,6 +112,59 @@ img#logo_loggedin, #logo_guest {
 img#profile {
     max-height: 42px;
 }
+
+#hamMenu {
+    display: none;
+    aspect-ratio: 562 / 562; 
+    height: 42px;
+    background-image: url("../images/hamMenu.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 0;
+}
+
+#hamMenuContent {
+    background-color: var(--clr-primary);
+    min-width: fit-content;
+    flex-wrap: nowrap;
+}
+
+#hamMenuContent > a{
+    display: inline-block;
+    min-width: 120px;
+    min-height: 25px;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 1px;
+    z-index: 1;
+    top: 42px;
+    right: 0;
+}
+
+.dropdown-content > a {
+    min-width: 160px;
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+    background-color: transparent;
+}
+
+
 
 /* ----------------------------------------------- */
 
@@ -209,18 +262,34 @@ select.langselect option{
 /* BREAKPOINTS */
 
 /* HEADER */
-
 @media (max-width:587px) {
-    #faq-button {
-        display: none;
+    #hamMenu {
+        display: inline-block;
+    }
+
+    #hamMenuContent {
+        left: 0;
+    }
+    #faq-button,#hiw-button {
+        max-height: 5px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px;
+        border-style: solid;
+        border-color: var(--clr-secondary);
+        color:  var(--clr-secondary);
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        transition: border-color 0.7s, background-color 0.7s, color 0.7s;
+    }
+    #faq-button:hover,#hiw-button:hover {
+        background-color: var(--clr-secondary);
+        border-color: transparent;
+        color: var(--clr-primary);
     }
 }
 
-@media (max-width:509px) {
-    #hiw-button {
-        display: none;
-    }
-}
 
 /* MAIN */
 
