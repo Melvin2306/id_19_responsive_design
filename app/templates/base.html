@@ -37,17 +37,27 @@
                             <img src="{{ url_for('static', filename='images/icon.png') }}" alt="adress-changer logo" id="logo_guest">
                         </a>
                     {% endif %}
+
                     <div class="dropdown" id="hamMenu">
                         <div class="dropdown-content" id="hamMenuContent">
-                            <a class ="button" id="hiw-button" href="{{ url_for('simple_pages.how_it_works') }}">
+                            <a class ="button" id="hiw-button_ham" href="{{ url_for('simple_pages.how_it_works') }}">
                                 How it works
                             </a>
-                            <a class ="button" id="faq-button" href="{{ url_for('simple_pages.faq') }}">
+                            <a class ="button" id="faq-button_ham" href="{{ url_for('simple_pages.faq') }}">
                                 FAQs
                             </a>
                         </div>
                     </div>
+
+                    <a class ="button" id="hiw-button" href="{{ url_for('simple_pages.how_it_works') }}">
+                        How it works
+                    </a>
+                    <a class ="button" id="faq-button" href="{{ url_for('simple_pages.faq') }}">
+                        FAQs
+                    </a>
+
                     <div id="placeholder"></div>
+
                     {% if current_user.is_authenticated %}
                         <a class ="button" id="settings" href="{{ url_for('users.get_settings', user_id=current_user.id) }}">
                             Account Settings

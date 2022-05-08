@@ -10,52 +10,59 @@
 
 
 
+<div id="rootpage">
+    <h1>
+        The Address Changer
+    </h1>
+    <div id="text_left">
+        <img id="mailbox_image" src="{{ url_for('static', filename='images/mailbox.jpg') }}" alt="picture mailbox">
+        
+        <p class="p_left">
+            Are you annoyed by changing or even forgetting to change your address with all your accounts?
+        </p>
 
-<h1>
-    The Address Changer
-</h1>
-<div id="text_left">
-    <img id="mailbox_image" src="{{ url_for('static', filename='images/mailbox.jpg') }}" alt="picture mailbox">
-    
-    <p class="p_left">
-        Are you annoyed by changing or even forgetting to change your address with all your accounts?
-    </p>
+        <p class="p_left">
+            We got you!
+        </p>
 
-    <p class="p_left">
-        We got you!
-    </p>
+        <p class="p_left">
+            The Address Changer - the best way to keep track of all your accounts and your easy way of changing your address for all your accounts with one click!
+        </p>
+    </div>
 
-    <p class="p_left">
-        The Address Changer - the best way to keep track of all your accounts and your easy way of changing your address for all your accounts with one click!
-    </p>
-</div>
+    <div class="columns">
+        <section class="text_lower" id="column1">
+            <h2>Easy to set up</h2>
 
-<div id="text_lower">
-<h2 class="p_lower h2_lower">Easy to set up</h2>
+            <p>
+                It is super easy to set up an Address Changer account.
+                Just
+                <a class ="link" id="signup" href="{{ url_for('users.get_signup') }}">
+                    sign up
+                </a>
+                with your email address and a password.
+                After the sign up add your account details with the button "Account Settings".
+            </p>
+        </section>
 
-<p class="p_lower">
-    It is super easy to set up an Address Changer account.
-    Just
-    <a class ="link" id="signup" href="{{ url_for('users.get_signup') }}">
-        sign up
-    </a>
-    with your email address and a password.
-    After the sign up add your account details with the button "Account Settings".
-</p>
+        <section class="text_lower" id="column2">
+            <h2>Easy to add accounts</h2>
 
-<h2>Easy to add accounts</h2>
+            <p>
+                When you are logged in you can add companies with the "Add Company" button.
+                You can also easily edit and delete companies.
+            </p>
+        </section>
 
-<p class="p_lower">
-    When you are logged in you can add companies with the "Add Company" button.
-    You can also easily edit and delete companies.
-</p>
+        <section class="text_lower" id="column3">
+            <h2>Change your address with one click</h2>
 
-<h2 class="p_lower h2_lower">Change your address with one click</h2>
-
-<p class="p_lower">
-    When you added all your accounts and you move to a new location you just need to change your address in the account settings.
-    After that you only need to click "Send Emails to all accounts".
-    That's it! Now your address is changed for all your accounts.
-</p>
+            <p>
+                When you added all your accounts and you move to a new location you just need to change your address in the account settings.
+                After that you only need to click "Send Emails to all accounts".
+                That's it! Now your address is changed for all your accounts.
+            </p>
+        </section>
+    </div>
 </div>
 {% endblock %}

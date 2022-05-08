@@ -33,6 +33,25 @@ p {
     font-size: 24px;
 }
 
+#rootpage {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.columns {
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.columns > section {
+    flex: 1 1 120px;
+    margin: 10px;
+    text-align: center;
+}
+
 @media (max-width:1024px) {
     #mailbox_image {
         width: 300px;

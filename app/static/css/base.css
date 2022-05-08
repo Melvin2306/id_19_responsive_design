@@ -270,7 +270,7 @@ select.langselect option{
     #hamMenuContent {
         left: 0;
     }
-    #faq-button,#hiw-button {
+    #faq-button_ham,#hiw-button_ham {
         max-height: 5px;
         border-radius: 5px;
         padding: 5px;
@@ -283,10 +283,13 @@ select.langselect option{
         background-color: transparent;
         transition: border-color 0.7s, background-color 0.7s, color 0.7s;
     }
-    #faq-button:hover,#hiw-button:hover {
+    #faq-button_ham:hover,#hiw-button_ham:hover {
         background-color: var(--clr-secondary);
         border-color: transparent;
         color: var(--clr-primary);
+    }
+    #faq-button,#hiw-button {
+        display: none;
     }
 }
 
