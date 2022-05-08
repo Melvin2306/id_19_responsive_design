@@ -11,12 +11,10 @@
 
 
 <div id="rootpage">
-    <h1>
-        The Address Changer
-    </h1>
-    <div id="text_left">
-        <img id="mailbox_image" src="{{ url_for('static', filename='images/mailbox.jpg') }}" alt="picture mailbox">
-        
+    <div class="flex_item left">
+        <h1>
+            The Address Changer
+        </h1>
         <p class="p_left">
             Are you annoyed by changing or even forgetting to change your address with all your accounts?
         </p>
@@ -29,6 +27,8 @@
             The Address Changer - the best way to keep track of all your accounts and your easy way of changing your address for all your accounts with one click!
         </p>
     </div>
+
+    <img class="flex_item right" id="mailbox_image" src="{{ url_for('static', filename='images/mailbox.jpg') }}" alt="picture mailbox">
 
     <div class="columns">
         <section class="text_lower" id="column1">

@@ -10,22 +10,27 @@ h2 {
 p {
     margin-bottom: 12px;
 }
+/* ----------- */
 
 .p_left {
     line-height: 35px;
     margin-bottom: 16px;
+    font-size: 26px;
 }
 
-#mailbox_image {
-    float: right;
-    right: 20%;
-    top: 22%;
-    width: 400px;
+.flex_item {
+    flex-basis: calc(100% / 12 * 6);
+}
+
+.left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
     height: 300px;
-}
-
-#background_image:before {
-    opacity: 0.3;
 }
 
 #text_left {
@@ -37,6 +42,7 @@ p {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .columns {
@@ -52,16 +58,18 @@ p {
     text-align: center;
 }
 
-@media (max-width:1024px) {
-    #mailbox_image {
-        width: 300px;
-        height: 200px;
+@media (max-width: 1273px){
+    .flex_item {
+        flex-basis: 100%;
+    }
+    .right {
+        object-fit: cover;
+        max-width: 70%;
     }
 }
 
-@media (max-width:700px) {
-    #mailbox_image {
-        width: 200px;
-        height: 150px;
+@media (max-width: 1032px) {
+    .columns > section {
+        flex-basis: 100%;
     }
 }
