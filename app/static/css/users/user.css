@@ -1,3 +1,8 @@
+main {
+    max-width: fit-content;
+    margin: 30px auto;
+}
+
 p {
     font-size: 20px;
     margin-bottom: 15px;
@@ -6,11 +11,12 @@ p {
 .table { 
     display: table;
     border: 1px solid var(--clr-secondary);
+    border-radius: 5px;
     border-spacing: 1em;
     margin-left: 0px;
     margin-top: 10px;
     margin-bottom: 25px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .table_header {
@@ -30,15 +36,49 @@ p {
 
 .row {
     display: table-row;
-    border-collapse:collapse;
-    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 .entity {
     display: table-cell;
     margin-right: 100px;
+    white-space: nowrap;
 }
 
 .company_button {
     padding: 2px;
+}
+
+@media (max-width: 1220px) {
+    .entity{
+        white-space: normal;
+    }
+}
+
+@media (max-width: 794px) {
+    main {
+        font-size: 12px;
+    }
+    .table {
+        border: none;
+        margin: 0 auto;
+        border-spacing: 0;
+    }
+    .table_header_element {
+        display: none;
+    }
+    .entity {
+        display: block;
+        margin: 5px 0px;
+    }
+    .row {
+        display: block;
+        border: 1px solid var(--clr-secondary);
+        border-radius: 5px;
+        padding: 15px;
+        margin: 20px;
+    }
+    .company_button {
+        padding: 2px 80px;
+    }
 }
