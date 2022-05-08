@@ -19,7 +19,7 @@ p {
 }
 
 .flex_item {
-    flex-basis: calc(100% / 12 * 6);
+    flex-basis: 50%;
 }
 
 .left {
